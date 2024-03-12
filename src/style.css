@@ -140,6 +140,24 @@ header{
 .div10 { grid-area: 11 / 13 / 21 / 17; }
 .div11 { grid-area: 6 / 13 / 11 / 10;}
 
+
+/* Avantages divs */
+/* test */
+/* .avantages_div_1{ grid-area: 1 / 1 / 6 / 7; }
+.avantages_div_2{grid-area: 6 / 1 / 11 / 7; }
+.avantages_div_3{grid-area: 11 / 1 / 16 / 7; }
+.avantages_div_4{grid-area: 16 / 1 / 21 / 7; } */
+
+.display_none_div{
+    display: none; 
+    opacity: 0;
+}
+
+.transition_div{
+    opacity: 1; 
+    transition: opacity 0.5s ease-out, height 1s ease-out, width 1s ease-out;
+}
+
 .text_infos_catacombes::-webkit-scrollbar-thumb {
     background: #670000;
     border-radius: 10px;

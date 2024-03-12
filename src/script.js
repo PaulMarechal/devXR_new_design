@@ -17,7 +17,7 @@ scene.background = new THREE.Color( 0x000000 );
 /**
  * Debug
  */
-const gui = new GUI()
+// const gui = new GUI()
 
 
 const parameters = { 
@@ -25,19 +25,19 @@ const parameters = {
     background_scene: 0x000000
 }
 
-gui
-    .addColor(parameters, 'materialColor')
-    .onChange(() => {
-        material.color.set(parameters.materialColor);
-        particlesMaterial.color.set(parameters.materialColor);
-    });
+// gui
+//     .addColor(parameters, 'materialColor')
+//     .onChange(() => {
+//         material.color.set(parameters.materialColor);
+//         particlesMaterial.color.set(parameters.materialColor);
+//     });
 
-    gui
-    .addColor(parameters, 'background_scene')
-    .onChange(() => {
-        scene.background.set(parameters.background_scene);
-        scene.background.set(parameters.background_scene);
-    });
+// gui
+//     .addColor(parameters, 'background_scene')
+//     .onChange(() => {
+//         scene.background.set(parameters.background_scene);
+//         scene.background.set(parameters.background_scene);
+//     });
 
 /**
  * Objects
