@@ -17,9 +17,9 @@ const div_bento = [
 ]
 
 function display_new_sizes_div(div){
-    div.style.opacity = "0"
     div.style.height = "30%"
     div.style.width = "30%"
+    div.style.opacity = "0"
     setTimeout(() => {
         div.style.height = "100%"
         div.style.width = "100%"
@@ -30,9 +30,9 @@ function display_new_sizes_div(div){
 function reset_height_width_div(){
     for (const i in div_bento) {
         const div = document.querySelector(`.${div_bento[i]}`)
-        div.style.height = "30%"
-        div.style.width = "30%"
         div.style.opacity = "0"
+        div.style.height = "1%"
+        div.style.width = "1%"
     }
 }
 

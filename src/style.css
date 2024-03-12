@@ -10,7 +10,14 @@ html {
 
 body{
     background: #ffffff;
+    cursor: none;
 }
+
+.body:hover #custom-cursor {
+    opacity: 1;
+}
+
+a:hover{cursor: none;}
 
 .webgl {
     position: fixed;
@@ -50,6 +57,13 @@ body{
     margin-top: 10vw;
 }
 
+.non_elect_area{
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
 section:nth-child(odd) {
     justify-content: flex-end;
 }
@@ -62,13 +76,28 @@ section:nth-child(odd) {
     text-align: left;
 }
 
-.cp{
-    cursor: pointer;
-}
-
 .tdn{
     text-decoration: none;
     color: #000;
+}
+
+/* Custom cursor */
+.custom-cursor {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 350ms ease;
+    transform: translate(-50%, -50%) scale(.3);
+    z-index: 1000;
+}
+
+.custom-cursor--link {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 /* Header */
@@ -155,7 +184,7 @@ header{
 
 .transition_div{
     opacity: 1; 
-    transition: opacity 0.5s ease-out, height 1s ease-out, width 1s ease-out;
+    transition: opacity 0.4s ease-out, height 1s ease-out, width 1s ease-out;
 }
 
 .text_infos_catacombes::-webkit-scrollbar-thumb {

@@ -1,7 +1,8 @@
-import * as THREE from 'three'
-import GUI from 'lil-gui'
-import gsap from 'gsap'
-import * as Bento from './bento.js'
+import * as THREE from 'three';
+import GUI from 'lil-gui';
+import gsap from 'gsap';
+import * as Bento from './bento.js';
+import * as customCursor from './customCursor.js';
 
 /**
  * Base
@@ -68,9 +69,9 @@ const mesh3 = new THREE.Mesh(
     material
 )
 
-mesh1.position.x = - 2
-mesh2.position.x = 2
-mesh3.position.x = - 2
+mesh1.position.x = 1.8
+mesh2.position.x = - 1.8
+mesh3.position.x = 1.8
 
 mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * 1
