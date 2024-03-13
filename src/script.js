@@ -69,13 +69,29 @@ const mesh3 = new THREE.Mesh(
     material
 )
 
-mesh1.position.x = 1.8
-mesh2.position.x = - 1.8
-mesh3.position.x = 0
+if( navigator.userAgent.match(/iPhone/i)
+|| navigator.userAgent.match(/webOS/i)
+|| navigator.userAgent.match(/Android/i)
+|| navigator.userAgent.match(/iPad/i)
+|| navigator.userAgent.match(/iPod/i)
+|| navigator.userAgent.match(/BlackBerry/i)
+|| navigator.userAgent.match(/Windows Phone/i)
+){
+    mesh1.position.x = 1
+    mesh2.position.x = - 1.5
+    mesh3.position.x = 0
+
+    mesh3.position.y = - objectsDistance * 2
+} else {
+    mesh1.position.x = 1.8
+    mesh2.position.x = - 1.8
+    mesh3.position.x = 0
+
+    mesh3.position.y = - objectsDistance * 2.1
+}
 
 mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * 1
-mesh3.position.y = - objectsDistance * 2.1
 
 scene.add(mesh1, mesh2, mesh3)
 
