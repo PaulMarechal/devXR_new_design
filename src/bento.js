@@ -166,6 +166,31 @@ function mobile_click_on_div_avantages(){
     }, 600);
 }
 
+function mobile_click_on_div_realisations(){
+    reset_height_width_div()
+    setTimeout(() => { 
+        for (const i in div_bento) {
+            const div = document.querySelector(`.${div_bento[i]}`)
+            if(div_bento[i] == "div1"){
+                div.style.gridArea = "1 / 1 / 6 / 13"
+                display_new_sizes_div(div)
+            } else if (div_bento[i] == "div2"){
+                div.style.gridArea = "6 / 1 / 11 / 13"
+                display_new_sizes_div(div)
+            } else if (div_bento[i] == "div3"){
+                div.style.gridArea = "11 / 1 / 16 / 13"
+                display_new_sizes_div(div)
+            } else if (div_bento[i] == "div9"){
+                div.style.display = "grid"
+                div.style.gridArea = "16 / 1 / 21 / 13"
+                display_new_sizes_div(div)
+            } else {
+                div.style.opacity = 0;
+            }
+        }
+    }, 600);
+}
+
 function click_on_top_menu_event() { 
     if( navigator.userAgent.match(/iPhone/i)
     || navigator.userAgent.match(/webOS/i)
@@ -177,7 +202,7 @@ function click_on_top_menu_event() {
     ){
         a_propos_div.addEventListener('click', () => {mobile_click_on_div_a_propos()})
         avantages_site_immersifs_div.addEventListener("click", () => {mobile_click_on_div_avantages()})
-        confiance_div.addEventListener("click", () => {click_on_div_realisations()})
+        confiance_div.addEventListener("click", () => {mobile_click_on_div_realisations()})
         exemple_site.addEventListener("click", () => {click_on_div_exemples()})
     }
     else {
