@@ -77,11 +77,19 @@ if( navigator.userAgent.match(/iPhone/i)
 || navigator.userAgent.match(/BlackBerry/i)
 || navigator.userAgent.match(/Windows Phone/i)
 ){
-    mesh1.position.x = 1
-    mesh2.position.x = - 1.5
-    mesh3.position.x = 0
-
-    mesh3.position.y = - objectsDistance * 2
+    if(window.innerHeight > window.innerWidth){
+        mesh1.position.x = 1
+        mesh2.position.x = - 1.5
+        mesh3.position.x = 0
+    
+        mesh3.position.y = - objectsDistance * 2
+    } else {
+        mesh1.position.x = 2
+        mesh2.position.x = - 1.4
+        mesh3.position.x = 0
+    
+        mesh3.position.y = - objectsDistance * 2
+    }
 } else {
     mesh1.position.x = 1.8
     mesh2.position.x = - 1.8

@@ -208,6 +208,38 @@ header{
 
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    /* font */
+    .roboto_medium {
+        font-size: 2.3vw;
+    }
+
+    .parent_header_menu {
+        grid-template-columns: repeat(11, 1fr);
+    }
+
+    .webgl{
+        width: 100%!important;
+    }
+
+    .logo_div { grid-area: 1 / 1 / 2 / 2; }
+    .a_propos_div { grid-area: 1 / 2 / 2 / 4; }
+    .avantages_site_immersifs_div { grid-area: 1 / 4 / 2 / 6; margin: auto 0;}
+    .confiance_div { grid-area: 1 / 6 / 2 / 8; margin: auto 0;}
+    .exemple_site { grid-area: 1 / 8 / 2 / 10; margin: auto 0;}
+    .contact_div { grid-area: 1 / 10 / 2 / 12; }
+
+    .section_second{
+        width: 87%;
+    }
+
+    .parent_bento_first_section{
+        grid-template-columns: repeat(20, 1fr);
+        grid-template-rows: repeat(20, 1fr);
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1rem;;
+    }
+
 }
 
 /* Mode portrait */
@@ -215,6 +247,14 @@ header{
     /* font */
     .roboto_medium {
         font-size: 2.6vw;
+    }
+
+    .webgl{
+        width: 99%!important;
+    }
+    
+    .parent_header_menu {
+        grid-template-columns: repeat(11, 1fr);
     }
 
     .webgl{
