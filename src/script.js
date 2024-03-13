@@ -71,11 +71,11 @@ const mesh3 = new THREE.Mesh(
 
 mesh1.position.x = 1.8
 mesh2.position.x = - 1.8
-mesh3.position.x = 1.8
+mesh3.position.x = 0
 
 mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * 1
-mesh3.position.y = - objectsDistance * 2.2
+mesh3.position.y = - objectsDistance * 2.1
 
 scene.add(mesh1, mesh2, mesh3)
 
