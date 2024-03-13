@@ -7,6 +7,16 @@ const parent_bento_first_section = document.querySelector(".parent_bento_first_s
 
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
+function refreshOnOrientationChange() {
+    window.addEventListener('orientationchange', () => {
+        setTimeout(() => {
+            location.reload();
+        }, 500); // Attendez 500 millisecondes avant de rafraîchir la page
+    });
+}
+
+refreshOnOrientationChange();
+
 const div_bento = [
     "div1", "div2", 
     "div3", "div4", 
@@ -140,7 +150,11 @@ function mobile_click_on_div_a_propos(){
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
             if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 21 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "1 / 1 / 21 / 13"
+                } else {
+                    div.style.gridArea = "1 / 1 / 21 / 21"
+                }
                 display_new_sizes_div(div)
             } else {
                 div.style.opacity = 0;
@@ -155,13 +169,25 @@ function mobile_click_on_div_avantages(){
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
             if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 7 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "1 / 1 / 7 / 13"
+                } else {
+                    div.style.gridArea = "1 / 1 / 21 / 8"
+                }
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div2"){
-                div.style.gridArea = "7 / 1 / 14 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "7 / 1 / 14 / 13"
+                } else {
+                    div.style.gridArea = "1 / 8 / 21 / 14"
+                }
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div3"){
-                div.style.gridArea = "14 / 1 / 21 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "14 / 1 / 21 / 13"
+                } else {
+                    div.style.gridArea = "1 / 14 / 21 / 21"
+                }
                 display_new_sizes_div(div)
             } else {
                 div.style.opacity = 0;
@@ -176,17 +202,33 @@ function mobile_click_on_div_realisations(){
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
             if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 6 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "1 / 1 / 6 / 13"
+                } else {
+                    div.style.gridArea = "1 / 1 / 11 / 11"
+                }
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div2"){
-                div.style.gridArea = "6 / 1 / 11 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "6 / 1 / 11 / 13"
+                } else {
+                    div.style.gridArea = "11 / 1 / 21 / 11"
+                }
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div3"){
-                div.style.gridArea = "11 / 1 / 16 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "11 / 1 / 16 / 13"
+                } else {
+                    div.style.gridArea = "1 / 11 / 11 / 21"
+                }
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div9"){
                 div.style.display = "grid"
-                div.style.gridArea = "16 / 1 / 21 / 13"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "16 / 1 / 21 / 13"
+                } else {
+                    div.style.gridArea = "11 / 11 / 21 / 21"
+                }
                 display_new_sizes_div(div)
             } else {
                 div.style.opacity = 0;
@@ -201,18 +243,35 @@ function mobile_click_on_div_exemples(){
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
             if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 11 / 10"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "1 / 1 / 11 / 10"
+                } else {
+                    div.style.gridArea = "1 / 1 / 21 / 6"
+                }
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div3"){
-                div.style.gridArea = "11 / 1 / 21 / 10"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "11 / 1 / 21 / 10"
+                } else {
+                    div.style.gridArea = "1 / 6 / 21 / 11"
+                }
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div8"){
                 div.style.display = "block"
-                div.style.gridArea = "1 / 10 / 11 / 21"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "1 / 10 / 11 / 21"
+                } else {
+                    div.style.gridArea = "1 / 11 / 21 / 16"
+                }
+                
                 display_new_sizes_div(div)
             } else if (div_bento[i] == "div9"){
                 div.style.display = "block"
-                div.style.gridArea = "11 / 10 / 21 / 21"
+                if( window.innerHeight > window.innerWidth ) {
+                    div.style.gridArea = "11 / 10 / 21 / 21"
+                } else {
+                    div.style.gridArea = "1 / 16 / 21 / 21"
+                }
                 display_new_sizes_div(div)
             } else {
                 div.style.opacity = 0;
@@ -220,96 +279,6 @@ function mobile_click_on_div_exemples(){
         }
     }, 600);
 }
-
-/*  Landscape mode  */
-function mobile_landscape_click_on_div_a_propos(){
-    reset_height_width_div()
-    setTimeout(() => { 
-        for (const i in div_bento) {
-            const div = document.querySelector(`.${div_bento[i]}`)
-            if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 21 / 21"
-                display_new_sizes_div(div)
-            } else {
-                div.style.opacity = 0;
-            }
-        }
-    }, 600);
-}
-
-function mobile_landscape_click_on_div_avantages(){
-    reset_height_width_div()
-    setTimeout(() => { 
-        for (const i in div_bento) {
-            const div = document.querySelector(`.${div_bento[i]}`)
-            if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 21 / 8"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div2"){
-                div.style.gridArea = "1 / 8 / 21 / 14"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div3"){
-                div.style.gridArea = "1 / 14 / 21 / 21"
-                display_new_sizes_div(div)
-            } else {
-                div.style.opacity = 0;
-            }
-        }
-    }, 600);
-}
-
-function mobile_landscape_click_on_div_realisations(){
-    reset_height_width_div()
-    setTimeout(() => { 
-        for (const i in div_bento) {
-            const div = document.querySelector(`.${div_bento[i]}`)
-            if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 11 / 11"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div2"){
-                div.style.gridArea = "11 / 1 / 21 / 11"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div3"){
-                div.style.gridArea = "1 / 11 / 11 / 21"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div9"){
-                div.style.display = "grid"
-                div.style.gridArea = "11 / 11 / 21 / 21"
-                display_new_sizes_div(div)
-            } else {
-                div.style.opacity = 0;
-            }
-        }
-    }, 600);
-}
-
-function mobile_landscape_click_on_div_exemples(){
-    reset_height_width_div()
-    setTimeout(() => { 
-        for (const i in div_bento) {
-            const div = document.querySelector(`.${div_bento[i]}`)
-            if(div_bento[i] == "div1"){
-                div.style.gridArea = "1 / 1 / 21 / 6"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div3"){
-                div.style.gridArea = "1 / 6 / 21 / 11"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div8"){
-                div.style.display = "block"
-                div.style.gridArea = "1 / 11 / 21 / 16"
-                display_new_sizes_div(div)
-            } else if (div_bento[i] == "div9"){
-                div.style.display = "block"
-                div.style.gridArea = "1 / 16 / 21 / 21"
-                display_new_sizes_div(div)
-            } else {
-                div.style.opacity = 0;
-            }
-        }
-    }, 600);
-}
-
-
 
 function click_on_top_menu_event() { 
     if( navigator.userAgent.match(/iPhone/i)
@@ -320,17 +289,11 @@ function click_on_top_menu_event() {
     || navigator.userAgent.match(/BlackBerry/i)
     || navigator.userAgent.match(/Windows Phone/i)
     ){
-        if(window.innerHeight > window.innerWidth){
-            a_propos_div.addEventListener('click', () => {mobile_click_on_div_a_propos()})
-            avantages_site_immersifs_div.addEventListener("click", () => {mobile_click_on_div_avantages()})
-            confiance_div.addEventListener("click", () => {mobile_click_on_div_realisations()})
-            exemple_site.addEventListener("click", () => {mobile_click_on_div_exemples()})
-        } else {
-            a_propos_div.addEventListener('click', () => {mobile_landscape_click_on_div_a_propos()})
-            avantages_site_immersifs_div.addEventListener("click", () => {mobile_landscape_click_on_div_avantages()})
-            confiance_div.addEventListener("click", () => {mobile_landscape_click_on_div_realisations()})
-            exemple_site.addEventListener("click", () => {mobile_landscape_click_on_div_exemples()})
-        }
+        a_propos_div.addEventListener('click', () => {mobile_click_on_div_a_propos()})
+        avantages_site_immersifs_div.addEventListener("click", () => {mobile_click_on_div_avantages()})
+        confiance_div.addEventListener("click", () => {mobile_click_on_div_realisations()})
+        exemple_site.addEventListener("click", () => {mobile_click_on_div_exemples()})
+        
     }
     else {
         a_propos_div.addEventListener('click', () => {click_on_div_a_propos()})

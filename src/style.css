@@ -218,7 +218,7 @@ header{
     }
 
     .webgl{
-        width: 100%!important;
+        width: 100%;
     }
 
     .logo_div { grid-area: 1 / 1 / 2 / 2; }
@@ -250,7 +250,7 @@ header{
     }
 
     .webgl{
-        width: 99%!important;
+        width: 98%;
     }
     
     .parent_header_menu {
