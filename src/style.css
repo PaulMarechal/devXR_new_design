@@ -171,17 +171,52 @@ header{
     border-radius: 15px; 
 }
 
-.div1 { grid-area: 1 / 1 / 8 / 7; }
-.div2 { grid-area: 8 / 1 / 11 / 7; }
-.div3 { grid-area: 11 / 1 / 21 / 11; }
-.div4 { grid-area: 5 / 17 / 21 / 21; }
-.div5 { grid-area: 1 / 17 / 5 / 21; }
-.div6 { grid-area: 1 / 13 / 11 / 17; }
-.div7 { grid-area: 6 / 7 / 11 / 10; }
-.div8 { grid-area: 1 / 7 / 6 / 13; }
-.div9 { grid-area: 11 / 11 / 21 / 13; }
-.div10 { grid-area: 11 / 13 / 21 / 17; }
-.div11 { grid-area: 6 / 13 / 11 / 10;}
+.div1 { 
+    grid-area: 1 / 1 / 8 / 7; 
+    background-color: #F28482;
+}
+.div2 { 
+    grid-area: 8 / 1 / 11 / 7; 
+    background-color: #84A59D;
+}
+.div3 { 
+    grid-area: 11 / 1 / 21 / 11; 
+    background-color: #F5CAC3;
+}
+.div4 { 
+    grid-area: 5 / 17 / 21 / 21; 
+    background-color: #F7D6E0;
+}
+.div5 { 
+    grid-area: 1 / 17 / 5 / 21; 
+    background-color: #7BDFF2;
+}
+.div6 { 
+    grid-area: 1 / 13 / 13 / 17; 
+    background-color: #F6BD60;
+}
+.div7 { 
+    grid-area: 6 / 7 / 11 / 10; 
+    background-color: #F7EDE2;
+}
+.div8 { 
+    grid-area: 1 / 7 / 6 / 13; 
+    background-color: #8B85C1;
+}
+.div9 { 
+    grid-area: 11 / 11 / 21 / 13; 
+    background-color: #D4CDF4;
+}
+.div10 { 
+    grid-area: 13 / 13 / 21 / 17; 
+    background-image: url('./assets/images/homepage/test_display_metro.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div11 { 
+    grid-area: 6 / 13 / 11 / 10;
+    background-color: #B2F7EF;
+}
 
 
 /* Avantages divs */
@@ -204,6 +239,50 @@ header{
 .text_infos_catacombes::-webkit-scrollbar-thumb {
     background: #670000;
     border-radius: 10px;
+}
+
+/* COntenu div */
+/* Homepage */
+.background_div_more_info{
+    background-color: #1a1a1a;
+    width: 50%;
+    border-radius: 20px;
+    padding: 15px;
+    display: flow;
+}
+
+#display_inside_div_3{
+    display: flex;
+    padding: 0.8rem;
+}
+
+.title_inside_div{
+    margin: 1rem;
+    width: 100%;
+}
+
+.image_qr{
+    width: 14.2rem;
+}
+
+.display_inside_div_6{
+    font-size: 35px;
+    font-weight: 200;
+    padding: 1rem;
+}
+
+#display_inside_div_7{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#image_presentation_div10{
+    width: -webkit-fill-available;
+}
+
+.image_presentation_metro{
+    border-radius: 15px;
+    width: -webkit-fill-available;
 }
 
 /* Mode paysage */

@@ -4,7 +4,9 @@ const avantages_site_immersifs_div = document.querySelector(".avantages_site_imm
 const confiance_div = document.querySelector(".confiance_div")
 const exemple_site = document.querySelector(".exemple_site")
 const parent_bento_first_section = document.querySelector(".parent_bento_first_section")
+const remove_info_div = document.querySelectorAll(".remove_info_div")
 
+console.log(remove_info_div)
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
@@ -46,8 +48,16 @@ function reset_height_width_div(){
     }
 }
 
+function remove_inside_div() {
+    remove_info_div.forEach(div => {
+        div.remove();
+    });
+}
+
 function click_on_div_avantages(){
+    remove_inside_div()
     reset_height_width_div()
+
     setTimeout(() => { 
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
@@ -75,6 +85,8 @@ function click_on_div_avantages(){
 
 function click_on_div_realisations(){
     reset_height_width_div()
+    remove_inside_div()
+
     setTimeout(() => { 
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
@@ -99,6 +111,8 @@ function click_on_div_realisations(){
 
 function click_on_div_exemples(){
     reset_height_width_div()
+    remove_inside_div()
+
     setTimeout(() => { 
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
@@ -123,6 +137,8 @@ function click_on_div_exemples(){
 
 function click_on_div_a_propos(){
     reset_height_width_div()
+    remove_inside_div()
+
     setTimeout(() => { 
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
@@ -239,6 +255,7 @@ function mobile_click_on_div_realisations(){
 
 function mobile_click_on_div_exemples(){
     reset_height_width_div()
+
     setTimeout(() => { 
         for (const i in div_bento) {
             const div = document.querySelector(`.${div_bento[i]}`)
