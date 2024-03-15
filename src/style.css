@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+
 }
 
 html {
@@ -51,7 +53,6 @@ a:hover{cursor: none;}
     font-family: 'Cabin', sans-serif;
     color: #ffeded;
     text-transform: uppercase;
-    font-size: 7vmin;
     padding-left: 5%;
     padding-right: 5%;
     margin-top: 10vw;
@@ -79,6 +80,11 @@ section:nth-child(odd) {
 .tdn{
     text-decoration: none;
     color: #000;
+}
+
+.text_p_homepage{
+    font-size: 25px;
+    font-weight: 200;
 }
 
 /* font */
@@ -148,11 +154,13 @@ header{
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 5px );
     -webkit-backdrop-filter: blur( 5px );
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 /* First section - Bento display */
+/* Forst test */
+/*
 .parent_bento_first_section {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
@@ -161,10 +169,6 @@ header{
     grid-row-gap: 14px;
     width: 95%; 
     padding: 40px;
-}
-
-.background_test_bento{
-    background: #e7e7e7;
 }
 
 .border_radius_bento{
@@ -217,7 +221,129 @@ header{
     grid-area: 6 / 13 / 11 / 10;
     background-color: #B2F7EF;
 }
+*/
 
+.parent_bento_first_section {
+    display: grid;
+    grid-template-columns: repeat(2, 0.2fr) repeat(9, 1fr) repeat(2, 0.5fr) repeat(4, 1fr) repeat(3, 0.2fr);
+    grid-template-rows: 0.1fr repeat(2, 1fr) 0.1fr 0.2fr repeat(3, 1fr) 0.2fr repeat(11, 1fr);
+    grid-column-gap: 14px;
+    grid-row-gap: 14px;
+    width: 95%; 
+    padding: 20px 40px;
+}
+
+.background_test_bento{
+    background: #e7e7e7;
+}
+
+.main_title_div_bento { grid-area: 2 / 3 / 4 / 19; }
+
+.text_main_title{
+    background: -webkit-linear-gradient(0deg, #be22ff 20%, #ff279c 50%, #ff981f 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: 0em;
+    width: fit-content;
+}
+.first_section_div_bento { grid-area: 5 / 3 / 10 / 12; padding: 1.5rem;}
+
+.inside_first_section_icon_part{
+    border: 1px solid #fff;
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 15px;
+    margin: 0.5rem 1.5rem;
+    height: max-content;
+}
+
+.second_inside_first_div{
+    grid-area: 6 / 7 / 9 / 12;
+    z-index: 2;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0.5rem 1.5rem;
+    height: max-content;
+    font-size: 25px;
+    text-transform: math-auto;
+    mix-blend-mode: difference;
+    font-weight: 200;
+}
+
+.display_infos_bento_text{
+    text-align: center;
+    color: #fff;
+    border: #fff solid 0.5px;
+}
+
+.first_inside_first_div { grid-area: 6 / 3 / 9 / 7; z-index: 2;}
+.ask_demo_div_bento { 
+    grid-area: 10 / 3 / 12 / 12; 
+    background: whitesmoke;
+    width: 80%;
+    margin: auto;
+    padding: 10px 15px;
+    text-align: center;
+    color: #000;
+}
+
+.display_elem_inside_div{
+    display: inline-flex;
+    height: -webkit-fill-available;
+}
+
+.qr_art_image{
+    object-fit: cover;
+    padding: 12px 20px;
+}
+.pub_div_bento { grid-area: 12 / 8 / 13 / 12; }
+.model_space_div_bento { grid-area: 12 / 3 / 13 / 8; }
+.discover_more_div_bento { grid-area: 13 / 7 / 14 / 12; }
+.pub_second_div_bento { grid-area: 13 / 3 / 14 / 7; }
+.display_qr_exemple_div_bento { grid-area: 14 / 3 / 21 / 12; }
+.mockup_iphone_div_bento { 
+    grid-area: 6 / 14 / 19 / 23; 
+    text-align: center; 
+    width: 65%;
+    /* background-image: url("./assets/images/mockup/iphone_mockup.png"); 
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+.contact_div_bento { 
+    grid-area: 20 / 14 / 21 / 17;
+    margin-left: 3.5rem;
+}
+
+.background_text_confiance{
+    background: #000;
+    margin: 1rem;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 30px;
+    height: -webkit-fill-available;
+    width: min-content;
+    margin-top: 1rem;
+}
+
+.contact_color{
+    background-color: #FBF9AB;
+    color: #000;
+    text-align: center;
+}
+
+.mockup_iphone{
+    width: 17rem;
+}
+
+.icon-tabler-circle-arrow-right{
+    margin-top: 0.5rem;
+}
 
 /* Avantages divs */
 /* test */
@@ -274,6 +400,11 @@ header{
 #display_inside_div_7{
     text-align: center;
     margin-top: 1rem;
+}
+
+.remove_info_div{
+    opacity: 1; 
+    transition: opacity 0.5s ease-out;
 }
 
 #image_presentation_div10{

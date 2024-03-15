@@ -50,7 +50,10 @@ function reset_height_width_div(){
 
 function remove_inside_div() {
     remove_info_div.forEach(div => {
-        div.remove();
+        div.opacity = 0;
+        setTimeout(() => {
+            div.remove();
+        }, 550);
     });
 }
 
