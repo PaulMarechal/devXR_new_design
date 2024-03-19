@@ -12,7 +12,7 @@ const canvas = document.querySelector('canvas.webgl')
 
 // Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color( 0x000000 ); 
+// scene.background = new THREE.Color( 0x000000 ); 
 
 
 /**
@@ -22,7 +22,7 @@ scene.background = new THREE.Color( 0x000000 );
 
 
 const parameters = { 
-    materialColor: '#ffeded',
+    materialColor: '#a8a8a8',
     background_scene: 0x000000
 }
 
@@ -134,10 +134,20 @@ for (let i = 0; i < particlesCount; i++) {
 /**
  * Sizes
  */
+// width: (window.innerWidth) - 26,
+// height: window.innerHeight
 const sizes = {
-    width: (window.innerWidth) - 26,
-    height: window.innerHeight
+    width: (window.innerWidth) * 0.85,
+    height: window.innerHeight * 0.95
 }
+
+const canvas_webgl = document.querySelector(".webgl")
+const marginLeft_webgl = ((window.innerWidth) - ((window.innerWidth) * 0.85)) / 2
+const marginTop_webgl = ((window.innerHeight) - ((window.innerHeight) * 0.95)) / 2
+canvas_webgl.style.marginLeft = `${marginLeft_webgl}px`
+canvas_webgl.style.marginTop = `${marginTop_webgl}px`
+
+
 
 window.addEventListener('resize', () =>
 {
@@ -171,10 +181,13 @@ cameraGroup.add(camera)
  */
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
-    alpha: true
+    alpha: true, 
+    antialias: true
 })
-renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.setSize(sizes.width, sizes.height)
+renderer.autoClear = false;
+renderer.setClearColor(0x000000, 0.0);
 
 /**
  * Scroll
@@ -182,8 +195,26 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 let scrollY = window.scrollY
 let currentSection = 0
 
-window.addEventListener('scroll', () =>
-{
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        canvas_webgl.style.height = `${window.innerHeight}px`;
+        canvas_webgl.style.marginTop = '0';
+
+        canvas_webgl.style.width = `${window.innerWidth}px`;
+        canvas_webgl.style.marginLeft = '0';
+
+        canvas_webgl.style.borderRadius = '0';
+    } else {
+        canvas_webgl.style.height = `${sizes.height}px`;
+        canvas_webgl.style.marginTop = `${marginTop_webgl}px`;
+
+        canvas_webgl.style.width = `${sizes.width}px`;
+        canvas_webgl.style.marginLeft = `${marginLeft_webgl}px`;
+
+        canvas_webgl.style.borderRadius = '15px';
+    }
+
     scrollY = window.scrollY
     const newSection = Math.round(scrollY / sizes.height)
 
@@ -198,11 +229,14 @@ window.addEventListener('scroll', () =>
                 ease: 'power2.inOut',
                 x: '+=6',
                 y: '+=3',
-                z: '+=1.5'
+                z: '+=1.5', 
             }
         )
     }
 })
+
+
+
 
 /**
  * Cursor
