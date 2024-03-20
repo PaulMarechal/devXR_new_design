@@ -38,6 +38,7 @@ canvas{
     background: -webkit-linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
     background: linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#de73d8",endColorstr="#5dd7f7",GradientType=1);
+
 }
 
 .body:hover #custom-cursor {
@@ -157,6 +158,7 @@ header{
     margin-left: 15%;
     margin-top: 2%;
     border-radius: 15px;
+    transition: margin-top 0.8s ease-out;
 }
 
 .parent_header_menu {

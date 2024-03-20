@@ -6,7 +6,6 @@ const exemple_site = document.querySelector(".exemple_site")
 const parent_bento_first_section = document.querySelector(".parent_bento_first_section")
 const remove_info_div = document.querySelectorAll(".remove_info_div")
 
-console.log(remove_info_div)
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
