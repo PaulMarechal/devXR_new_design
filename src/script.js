@@ -3,6 +3,7 @@ import GUI from 'lil-gui';
 import gsap from 'gsap';
 import * as Bento from './bento.js';
 import * as customCursor from './customCursor.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 /**
  * Base
@@ -59,108 +60,81 @@ const material = new THREE.MeshToonMaterial({
     gradientMap: gradientTexture
 })
 
+/**
+ * Import Hand
+*/
+// Instantiate a loader
+const loader = new GLTFLoader();
+
+// Optional: Provide a DRACOLoader instance to decode compressed mesh data
+// const dracoLoader = new DRACOLoader();
+// dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
+// loader.setDRACOLoader( dracoLoader );
+
+// Load a glTF resource
+loader.load(
+	// resource URL
+	'https://devxr.fr/assets/models/handphone.glb',
+	// called when the resource is loaded
+	function ( handModel ) {
+
+        handModel.scene.rotateY(Math.PI) 
+        handModel.scene.position.x = 4
+        handModel.scene.position.y = -1.5
+        handModel.animations; // Array<THREE.AnimationClip>
+		handModel.scene; // THREE.Group
+		handModel.scenes; // Array<THREE.Group>
+		handModel.cameras; // Array<THREE.Camera>
+		handModel.asset; // Object
+        
+        handModel.scene.scale.set(7, 7, 7); 
+		scene.add( handModel.scene );
+	},
+	// called while loading is progressing
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' + error );
+
+	}
+);
+
+// handModel.position.x(-0.5)
+
+
 // Objects
 const objectsDistance = 4
 
-
 /* test */
-const width = 6; // Largeur
-const height = 5; // Hauteur
-const radius_t = 0.5; // Rayon des coins arrondis
+const texture = textureLoader.load('https://devxr.fr/assets/images/background_glass.png', () => {
+}, undefined, (error) => {
+    console.error('Erreur de chargement de l\'image : ', error);
+});
 
-// Création de la géométrie du rectangle avec coins arrondis
-const roundedRectShape = new THREE.Shape();
-roundedRectShape.moveTo(0, radius_t);
-roundedRectShape.quadraticCurveTo(0, 0, radius_t, 0);
-roundedRectShape.lineTo(width - radius_t, 0);
-roundedRectShape.quadraticCurveTo(width, 0, width, radius_t);
-roundedRectShape.lineTo(width, height - radius_t);
-roundedRectShape.quadraticCurveTo(width, height, width - radius_t, height);
-roundedRectShape.lineTo(radius_t, height);
-roundedRectShape.quadraticCurveTo(0, height, 0, height - radius_t);
-roundedRectShape.lineTo(0, radius_t);
+const material_glass = new THREE.MeshPhysicalMaterial({ 
+    map: texture, 
+    transparent: true, 
+    roughness: 0.7,   
+    transmission: 1,  
+    thickness: 1
+});
+const geometry_glass = new THREE.PlaneGeometry(7, 5);
+const background_glass = new THREE.Mesh(geometry_glass, material_glass);
+scene.add(background_glass);
 
-// Création de l'extrusion pour le rectangle avec coins arrondis
-const extrudeSettings = {
-    depth: 1,
-    bevelEnabled: false
-};
-const geometry_glass = new THREE.ExtrudeGeometry(roundedRectShape, extrudeSettings);
-const geometry_glass_second = new THREE.ExtrudeGeometry(roundedRectShape, extrudeSettings);
+
 
 /* fin test */
-geometry_glass_second.computeBoundingBox();
-const material_glass = new THREE.MeshPhysicalMaterial( {
-    roughness: 0,   
-    transmission: 0.5, 
-    thickness: 0.5, 
-} );
 
-var material_gradient = new THREE.ShaderMaterial({
-    uniforms: {
-      color1: {
-        value: new THREE.Color("#de73d8")
-      },
-      color2: {
-        value: new THREE.Color("#fffac9")
-      }, 
-      color3: {
-        value: new THREE.Color("#5dd7f7")
-      },
-      bboxMin: {
-        value: geometry_glass_second.boundingBox.min
-      },
-      bboxMax: {
-        value: geometry_glass_second.boundingBox.max
-      }
-    },
-    vertexShader: `
-      uniform vec3 bboxMin;
-      uniform vec3 bboxMax;
-  
-      varying vec2 vUv;
-  
-      void main() {
-        vUv.y = (position.y - bboxMin.y) / (bboxMax.y - bboxMin.y);
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-      }
-    `,
-    fragmentShader: `
-      uniform vec3 color1;
-      uniform vec3 color2;
-      uniform vec3 color3;
-  
-      varying vec2 vUv;
-  
-      void main() {
-        vec3 finalColor;
-        if (vUv.y < 0.4) { // 0 à 40% : couleur1 vers couleur2
-          finalColor = mix(color1, color2, vUv.y / 0.4);
-        } else if (vUv.y < 0.6) { // 40 à 60% : couleur2
-          finalColor = color2;
-        } else { // 60 à 100% : couleur2 vers couleur3
-          finalColor = mix(color2, color3, (vUv.y - 0.6) / 0.4);
-        }
-  
-        gl_FragColor = vec4(finalColor, 1.0);
-      }
-    `
-  });
-  
-  
+
 const mesh1 = new THREE.Mesh(
     new THREE.TorusGeometry(1, 0.4, 16, 60),
     material
-)
-
-const plane_glass = new THREE.Mesh(
-    geometry_glass,
-    material_glass
-)
-
-const plane_glass_second = new THREE.Mesh(
-    geometry_glass_second,
-    material_gradient
 )
 
 const mesh2 = new THREE.Mesh(
@@ -194,17 +168,9 @@ if( navigator.userAgent.match(/iPhone/i)
         mesh3.position.y = - objectsDistance * 2
     }
 } else {
-    plane_glass.position.x = 1
-    plane_glass.position.z = -7
-    plane_glass.position.y = -3
-    plane_glass.rotation.z = 0.2
-
-    
-
-    plane_glass_second.position.x = 1.1
-    plane_glass_second.position.z = -7.6
-    plane_glass_second.position.y = -3
-    plane_glass_second.rotation.z = 0.2
+    background_glass.position.z = -7
+    background_glass.position.x = 2
+    background_glass.rotation.z = 0.2
 
 
     mesh1.position.x = 1.8
@@ -218,7 +184,8 @@ if( navigator.userAgent.match(/iPhone/i)
 mesh1.position.y = - objectsDistance * 0
 mesh2.position.y = - objectsDistance * 1
 
-scene.add(plane_glass,plane_glass_second, mesh1, mesh2, mesh3)
+// plane_glass, plane_glass_second, mesh1
+scene.add(mesh2, mesh3)
 
 const sectionMeshes = [ mesh1, mesh2, mesh3 ]
 
@@ -229,7 +196,7 @@ const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
 directionalLight.position.set(1, 1, 0)
 scene.add(directionalLight)
 
-const light_second = new THREE.AmbientLight( 0xffffff ); // soft white light
+const light_second = new THREE.AmbientLight( 0xe2e2e2 ); // soft white light
 scene.add( light_second );
 
 /**
@@ -341,8 +308,7 @@ window.addEventListener('scroll', () => {
     scrollY = window.scrollY
     const newSection = Math.round(scrollY / sizes.height)
 
-    if(newSection != currentSection)
-    {
+    if(newSection != currentSection) {
         currentSection = newSection
 
         gsap.to(
@@ -352,6 +318,13 @@ window.addEventListener('scroll', () => {
                 x: '+=6',
                 y: '+=3',
                 z: '+=1.5', 
+            }, 
+            sectionPlane[currentSection].position, {
+                duration: 1.5,
+                ease: 'power2.inOut',
+                x: '+=20',
+                y: '+=10',
+                z: '0', 
             }
         )
     }
