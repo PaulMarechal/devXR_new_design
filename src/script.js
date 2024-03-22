@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import * as Bento from './bento.js';
 import * as customCursor from './customCursor.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
 /**
  * Base
  */
@@ -15,17 +14,16 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 // scene.background = new THREE.Color( 0x000000 ); 
 
-
 /**
  * Debug
  */
-// const gui = new GUI()
+const gui = new GUI()
 
 
 const parameters = { 
     materialColor: '#ffeded',
     background_scene: 0x000000, 
-    materialColorSmallPlanets: "#a8a8a8"
+    materialColorSmallPlanets: "#ffffff"
 }
 
 // gui
@@ -66,12 +64,6 @@ const material = new THREE.MeshToonMaterial({
 // Instantiate a loader
 const loader = new GLTFLoader();
 
-// Optional: Provide a DRACOLoader instance to decode compressed mesh data
-// const dracoLoader = new DRACOLoader();
-// dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
-// loader.setDRACOLoader( dracoLoader );
-
-// Load a glTF resource
 loader.load(
 	// resource URL
 	'https://devxr.fr/assets/models/handphone.glb',
@@ -81,31 +73,19 @@ loader.load(
         handModel.scene.rotateY(Math.PI) 
         handModel.scene.position.x = 4
         handModel.scene.position.y = -1.5
-        handModel.animations; // Array<THREE.AnimationClip>
-		handModel.scene; // THREE.Group
-		handModel.scenes; // Array<THREE.Group>
-		handModel.cameras; // Array<THREE.Camera>
-		handModel.asset; // Object
         
         handModel.scene.scale.set(7, 7, 7); 
 		scene.add( handModel.scene );
 	},
 	// called while loading is progressing
 	function ( xhr ) {
-
 		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
 	},
 	// called when loading has errors
 	function ( error ) {
-
 		console.log( 'An error happened' + error );
-
 	}
 );
-
-// handModel.position.x(-0.5)
-
 
 // Objects
 const objectsDistance = 4
@@ -123,71 +103,26 @@ const material_glass = new THREE.MeshPhysicalMaterial({
     transmission: 1,  
     thickness: 1
 });
+
 const geometry_glass = new THREE.PlaneGeometry(7, 5);
 const background_glass = new THREE.Mesh(geometry_glass, material_glass);
 scene.add(background_glass);
 
 
-
-/* fin test */
-
-
-const mesh1 = new THREE.Mesh(
-    new THREE.TorusGeometry(1, 0.4, 16, 60),
-    material
-)
-
-const mesh2 = new THREE.Mesh(
-    new THREE.TorusKnotGeometry(0.8, 0.35, 100, 16),
-    material
-)
-const mesh3 = new THREE.Mesh(
-    new THREE.ConeGeometry(1, 2, 32),
-    material
-)
-
-if( navigator.userAgent.match(/iPhone/i)
-|| navigator.userAgent.match(/webOS/i)
-|| navigator.userAgent.match(/Android/i)
-|| navigator.userAgent.match(/iPad/i)
-|| navigator.userAgent.match(/iPod/i)
-|| navigator.userAgent.match(/BlackBerry/i)
-|| navigator.userAgent.match(/Windows Phone/i)
+if( !navigator.userAgent.match(/iPhone/i)
+|| !navigator.userAgent.match(/webOS/i)
+|| !navigator.userAgent.match(/Android/i)
+|| !navigator.userAgent.match(/iPad/i)
+|| !navigator.userAgent.match(/iPod/i)
+|| !navigator.userAgent.match(/BlackBerry/i)
+|| !navigator.userAgent.match(/Windows Phone/i)
 ){
-    if(window.innerHeight > window.innerWidth){
-        mesh1.position.x = 1
-        mesh2.position.x = - 1.5
-        mesh3.position.x = 0
-    
-        mesh3.position.y = - objectsDistance * 2
-    } else {
-        mesh1.position.x = 2
-        mesh2.position.x = - 1.4
-        mesh3.position.x = 0
-    
-        mesh3.position.y = - objectsDistance * 2
-    }
-} else {
     background_glass.position.z = -7
     background_glass.position.x = 2
     background_glass.rotation.z = 0.2
+} 
 
-
-    mesh1.position.x = 1.8
-    mesh2.position.x = - 1.8
-    mesh3.position.x = 0
-
-    mesh3.position.y = - objectsDistance * 2.1
-
-}
-
-mesh1.position.y = - objectsDistance * 0
-mesh2.position.y = - objectsDistance * 1
-
-// plane_glass, plane_glass_second, mesh1
-scene.add(mesh2, mesh3)
-
-const sectionMeshes = [ mesh1, mesh2, mesh3 ]
+const sectionMeshes = [ background_glass]
 
 /**
  * Lights
@@ -204,25 +139,39 @@ scene.add( light_second );
  */
 // Geometry
 const particlesCount = 200;
-const radius = 0.006;
-const particlesGeometry = new THREE.SphereGeometry(radius, 16, 16);
 
+const radius_sphere_tel = 0.007;
+const radius_sphere_scene = 0.001;
+
+const particles_geometry_tel = new THREE.SphereGeometry(radius_sphere_tel, 4, 4);
+const particles_geometry_scene = new THREE.SphereGeometry(radius_sphere_scene, 16, 16);
+
+
+// Spheres for scene 
 for (let i = 0; i < particlesCount; i++) {
-    const sphere = new THREE.Mesh(particlesGeometry, new THREE.MeshBasicMaterial({ color: parameters.materialColorSmallPlanets }));
+    const sphere = new THREE.Mesh(particles_geometry_tel, new THREE.MeshBasicMaterial({ color: parameters.materialColorSmallPlanets }));
+    
+    sphere.position.x = (Math.random() - 0.5) * 6;
+    sphere.position.y = objectsDistance - 0.5 - Math.random() * 7
+    sphere.position.z = (Math.random() - 0.5) * 4;
+    
+    scene.add(sphere);
+}
 
-    sphere.position.x = (Math.random() - 0.5) * 10;
-    sphere.position.y = objectsDistance * 0.5 - Math.random() * objectsDistance * sectionMeshes.length;
-    sphere.position.z = (Math.random() - 0.5) * 10;
+// Spheres for tel
+for (let i = 0; i < particlesCount; i++) {
+    const sphere = new THREE.Mesh(particles_geometry_scene, new THREE.MeshBasicMaterial({ color: parameters.materialColorSmallPlanets }));
+
+    sphere.position.x = (Math.random() + 0.7) * 1;
+    sphere.position.y = objectsDistance - 3 - Math.random() * 1.8
+    sphere.position.z = (Math.random() - 0.5) * 1;
 
     scene.add(sphere);
 }
 
-
 /**
  * Sizes
  */
-// width: (window.innerWidth) - 26,
-// height: window.innerHeight
 const sizes = {
     width: (window.innerWidth) * 0.85,
     height: window.innerHeight * 0.95
@@ -254,14 +203,17 @@ window.addEventListener('resize', () =>
 /**
  * Camera
  */
-// Group
-const cameraGroup = new THREE.Group()
-scene.add(cameraGroup)
 
 // Base camera
 const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100)
 camera.position.z = 6
-cameraGroup.add(camera)
+scene.add(camera)
+
+const cameraFolder = gui.addFolder('Camera')
+cameraFolder.add(camera.position, 'x', 0, Math.PI * 2)
+cameraFolder.add(camera.position, 'y', 0, Math.PI * 2)
+cameraFolder.add(camera.position, 'z', 0, Math.PI * 2)
+cameraFolder.close()
 
 /**
  * Renderer
@@ -307,31 +259,42 @@ window.addEventListener('scroll', () => {
 
     scrollY = window.scrollY
     const newSection = Math.round(scrollY / sizes.height)
+})
 
-    if(newSection != currentSection) {
-        currentSection = newSection
-
-        gsap.to(
-            sectionMeshes[currentSection].rotation, {
-                duration: 1.5,
-                ease: 'power2.inOut',
-                x: '+=6',
-                y: '+=3',
-                z: '+=1.5', 
-            }, 
-            sectionPlane[currentSection].position, {
-                duration: 1.5,
-                ease: 'power2.inOut',
-                x: '+=20',
-                y: '+=10',
-                z: '0', 
-            }
-        )
+/**
+ * Scroll event ( gsap )
+*/
+gsap.registerPlugin(ScrollTrigger);
+const timeline = gsap.timeline({
+  scrollTrigger: {
+    //   markers: true,
+      trigger: ".home",
+      scrub: 7,
+      start: "2% top",
+      endTrigger: "#second_section",
+      end: "top top",
     }
 })
 
+function scrollListener() {
+    // First
+    timeline.to(camera.position, {
+      x: 0, 
+      y: 0, 
+      z: 6,
+      duration: 0,
+    }, 0);
+    
+    // Second
+    timeline.to(camera.position, {
+        x: 1.3, 
+        y: 0.2, 
+        z: 0.48,
+      duration: 0.5,
+    }, ">");
+}
 
-
+scrollListener();
 
 /**
  * Cursor
@@ -358,20 +321,8 @@ const tick = () =>
     const deltaTime = elapsedTime - previousTime
     previousTime = elapsedTime
 
-    // Animate camera
-    camera.position.y = - scrollY / sizes.height * objectsDistance
-
     const parallaxX = cursor.x * 0.5
     const parallaxY = - cursor.y * 0.5
-    cameraGroup.position.x += (parallaxX - cameraGroup.position.x) * 5 * deltaTime
-    cameraGroup.position.y += (parallaxY - cameraGroup.position.y) * 5 * deltaTime
-
-    // Animate meshes
-    for(const mesh of sectionMeshes)
-    {
-        mesh.rotation.x += deltaTime * 0.1
-        mesh.rotation.y += deltaTime * 0.12
-    }
 
     // Render
     renderer.render(scene, camera)
