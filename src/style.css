@@ -75,7 +75,11 @@ a:hover{cursor: none;}
 }
 
 .section{
-    margin-bottom: 120%;
+    margin-bottom: 130%;
+}
+
+.white_text{
+    color: #f3f3f3;
 }
 
 .section_second{
@@ -289,7 +293,7 @@ header{
 .first_section_div_bento { grid-area: 5 / 3 / 10 / 12; padding: 1.5rem;}
 
 .inside_first_section_icon_part{
-    border: 1px solid #414141;
+    border: 1px solid #f3f3f3;
     width: fit-content;
     padding: 20px 30px;
     border-radius: 15px;
