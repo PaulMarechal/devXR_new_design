@@ -66,15 +66,15 @@ const loader = new GLTFLoader();
 
 loader.load(
 	// resource URL
-	'https://devxr.fr/assets/models/handphone.glb',
+	'https://devxr.fr/assets/models/handPhoneGlass.glb',
 	// called when the resource is loaded
 	function ( handModel ) {
 
-        handModel.scene.rotateY(Math.PI) 
+        // handModel.scene.rotateY(Math.PI) 
         handModel.scene.position.x = 4
-        handModel.scene.position.y = -1.5
+        handModel.scene.position.y = -1.2
         
-        handModel.scene.scale.set(7, 7, 7); 
+        handModel.scene.scale.set(3.5, 3.5, 3.5); 
 		scene.add( handModel.scene );
 	},
 	// called while loading is progressing
@@ -91,38 +91,38 @@ loader.load(
 const objectsDistance = 4
 
 /* test */
-const texture = textureLoader.load('https://devxr.fr/assets/images/background_glass.png', () => {
-}, undefined, (error) => {
-    console.error('Erreur de chargement de l\'image : ', error);
-});
+// const texture = textureLoader.load('https://devxr.fr/assets/images/background_glass.png', () => {
+// }, undefined, (error) => {
+//     console.error('Erreur de chargement de l\'image : ', error);
+// });
 
-const material_glass = new THREE.MeshPhysicalMaterial({ 
-    map: texture, 
-    transparent: true, 
-    roughness: 0.7,   
-    transmission: 1,  
-    thickness: 1
-});
+// const material_glass = new THREE.MeshPhysicalMaterial({ 
+//     map: texture, 
+//     transparent: true, 
+//     roughness: 0.7,   
+//     transmission: 1,  
+//     thickness: 1
+// });
 
-const geometry_glass = new THREE.PlaneGeometry(7, 5);
-const background_glass = new THREE.Mesh(geometry_glass, material_glass);
-scene.add(background_glass);
+// const geometry_glass = new THREE.PlaneGeometry(7, 5);
+// const background_glass = new THREE.Mesh(geometry_glass, material_glass);
+// scene.add(background_glass);
 
 
-if( !navigator.userAgent.match(/iPhone/i)
-|| !navigator.userAgent.match(/webOS/i)
-|| !navigator.userAgent.match(/Android/i)
-|| !navigator.userAgent.match(/iPad/i)
-|| !navigator.userAgent.match(/iPod/i)
-|| !navigator.userAgent.match(/BlackBerry/i)
-|| !navigator.userAgent.match(/Windows Phone/i)
-){
-    background_glass.position.z = -7
-    background_glass.position.x = 2
-    background_glass.rotation.z = 0.2
-} 
+// if( !navigator.userAgent.match(/iPhone/i)
+// || !navigator.userAgent.match(/webOS/i)
+// || !navigator.userAgent.match(/Android/i)
+// || !navigator.userAgent.match(/iPad/i)
+// || !navigator.userAgent.match(/iPod/i)
+// || !navigator.userAgent.match(/BlackBerry/i)
+// || !navigator.userAgent.match(/Windows Phone/i)
+// ){
+//     background_glass.position.z = -7
+//     background_glass.position.x = 2
+//     background_glass.rotation.z = 0.2
+// } 
 
-const sectionMeshes = [ background_glass]
+// const sectionMeshes = [ background_glass ]
 
 /**
  * Lights
@@ -138,17 +138,18 @@ scene.add( light_second );
  * Particles
  */
 // Geometry
-const particlesCount = 200;
+const particlesCount_tel = 300;
+const particlesCount_scene = 200;
 
 const radius_sphere_tel = 0.007;
-const radius_sphere_scene = 0.001;
+const radius_sphere_scene = 0.0005;
 
 const particles_geometry_tel = new THREE.SphereGeometry(radius_sphere_tel, 4, 4);
 const particles_geometry_scene = new THREE.SphereGeometry(radius_sphere_scene, 16, 16);
 
 
 // Spheres for scene 
-for (let i = 0; i < particlesCount; i++) {
+for (let i = 0; i < particlesCount_tel; i++) {
     const sphere = new THREE.Mesh(particles_geometry_tel, new THREE.MeshBasicMaterial({ color: parameters.materialColorSmallPlanets }));
     
     sphere.position.x = (Math.random() - 0.5) * 6;
@@ -159,12 +160,12 @@ for (let i = 0; i < particlesCount; i++) {
 }
 
 // Spheres for tel
-for (let i = 0; i < particlesCount; i++) {
+for (let i = 0; i < particlesCount_tel; i++) {
     const sphere = new THREE.Mesh(particles_geometry_scene, new THREE.MeshBasicMaterial({ color: parameters.materialColorSmallPlanets }));
 
     sphere.position.x = (Math.random() + 0.7) * 1;
-    sphere.position.y = objectsDistance - 3 - Math.random() * 1.8
-    sphere.position.z = (Math.random() - 0.5) * 1;
+    sphere.position.y = objectsDistance - 3 - Math.random() * 1.7
+    sphere.position.z = (Math.random() - 0.1) * 0.7;
 
     scene.add(sphere);
 }
@@ -205,14 +206,20 @@ window.addEventListener('resize', () =>
  */
 
 // Base camera
-const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100)
+
+// Group
+const cameraGroup = new THREE.Group()
+scene.add(cameraGroup)
+
+// Base camera
+const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.01, 100)
 camera.position.z = 6
-scene.add(camera)
+cameraGroup.add(camera)
 
 const cameraFolder = gui.addFolder('Camera')
 cameraFolder.add(camera.position, 'x', 0, Math.PI * 2)
-cameraFolder.add(camera.position, 'y', 0, Math.PI * 2)
-cameraFolder.add(camera.position, 'z', 0, Math.PI * 2)
+// cameraFolder.add(camera.position, 'y', 0, Math.PI * 2)
+// cameraFolder.add(camera.position, 'z', 0, Math.PI * 2)
 cameraFolder.close()
 
 /**
@@ -256,9 +263,6 @@ window.addEventListener('scroll', () => {
         header.style.marginTop = "2%"
 
     }
-
-    scrollY = window.scrollY
-    const newSection = Math.round(scrollY / sizes.height)
 })
 
 /**
@@ -288,13 +292,15 @@ function scrollListener() {
     // Second
     timeline.to(camera.position, {
         x: 1.3, 
-        y: 0.2, 
-        z: 0.48,
+        y: 0.5, 
+        z: 0.55,
       duration: 0.5,
     }, ">");
 }
 
 scrollListener();
+
+        
 
 /**
  * Cursor
@@ -305,8 +311,8 @@ cursor.y = 0
 
 window.addEventListener('mousemove', (event) =>
 {
-    cursor.x = event.clientX / sizes.width - 0.5
-    cursor.y = event.clientY / sizes.height - 0.5
+    cursor.x = event.clientX / sizes.width - 0.1
+    cursor.y = event.clientY / sizes.height - 0.1
 })
 
 /**
@@ -321,8 +327,20 @@ const tick = () =>
     const deltaTime = elapsedTime - previousTime
     previousTime = elapsedTime
 
-    const parallaxX = cursor.x * 0.5
-    const parallaxY = - cursor.y * 0.5
+   // Animate camera
+   camera.position.y = - scrollY / sizes.height * objectsDistance
+
+   const parallaxX = cursor.x * 0.1
+   const parallaxY = - cursor.y * 0.1
+   cameraGroup.position.x += (parallaxX - cameraGroup.position.x) * 5 * deltaTime
+   cameraGroup.position.y += (parallaxY - cameraGroup.position.y) * 2 * deltaTime
+
+//    // Animate meshes
+//    for(const mesh of sectionMeshes)
+//    {
+//        mesh.rotation.x += deltaTime * 0.1
+//        mesh.rotation.y += deltaTime * 0.12
+//    }
 
     // Render
     renderer.render(scene, camera)
