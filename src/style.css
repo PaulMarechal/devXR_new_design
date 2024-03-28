@@ -463,8 +463,10 @@ header{
     justify-content: center;
 }
 
-.title{
-    width: 20%;
+.title_avantages{
+    width: 27%;
+    font-size: 1.3vw;
+    color: #d9d9d9;
 }
 .question-answer-container{
     display: flex;
@@ -489,6 +491,7 @@ align-items:center;
 .question h3{
     font-size: 1.8rem;
     font-weight: light;
+    color: #b9b9b9;
 }
 
 .answer{
@@ -509,6 +512,13 @@ align-items:center;
 
 svg{
    transition: transform 0.5s ease-in;
+}
+
+.text_style_avantages_p{
+    font-weight: 200;
+    text-transform: math-auto;
+    color: #b9b9b9;
+    line-height: 1vw;
 }
 
 @keyframes fade {
