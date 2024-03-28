@@ -490,8 +490,9 @@ align-items:center;
 
 .question h3{
     font-size: 1.8rem;
-    font-weight: light;
+    font-weight: 700;
     color: #b9b9b9;
+    line-height: 4vw;
 }
 
 .answer{
@@ -518,7 +519,7 @@ svg{
     font-weight: 200;
     text-transform: math-auto;
     color: #b9b9b9;
-    line-height: 1vw;
+    line-height: 1.3vw;
 }
 
 @keyframes fade {

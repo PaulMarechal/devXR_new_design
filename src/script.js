@@ -236,8 +236,8 @@ cameraGroup.add(camera)
 
 const cameraFolder = gui.addFolder('Camera')
 cameraFolder.add(camera.position, 'x', 0, Math.PI * 2)
-// cameraFolder.add(camera.position, 'y', 0, Math.PI * 2)
-// cameraFolder.add(camera.position, 'z', 0, Math.PI * 2)
+cameraFolder.add(camera.position, 'y', 0, Math.PI * 2)
+cameraFolder.add(camera.position, 'z', 0, Math.PI * 2)
 cameraFolder.close()
 
 /**
