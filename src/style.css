@@ -19,6 +19,7 @@ body{
 
 .main_title_site{
     font-weight: 400;
+    text-align: center;
 }
 
 #text_under_main_title{
@@ -75,7 +76,7 @@ a:hover{cursor: none;}
 }
 
 .section{
-    margin-bottom: 130%;
+    margin-bottom: 150%;
 }
 
 .white_text{
@@ -120,7 +121,7 @@ section:nth-child(odd) {
 }
 
 .text_p_homepage{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 200;
 }
 

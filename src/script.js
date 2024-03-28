@@ -76,6 +76,24 @@ loader.load(
         
         handModel.scene.scale.set(3.5, 3.5, 3.5); 
 		scene.add( handModel.scene );
+
+        function scrollListener() {
+            // First
+            timeline.to(handModel.position, {
+              x: 0, 
+              y: -1.2, 
+              z: 4,
+              duration: 0,
+            }, 0);
+            
+            // Second
+            timeline.to(camera.position, {
+                x: 0, 
+                y: -1.2, 
+                z: 2,
+              duration: 0.1,
+            }, ">");
+        }
 	},
 	// called while loading is progressing
 	function ( xhr ) {
@@ -131,7 +149,7 @@ const directionalLight = new THREE.DirectionalLight('#ffffff', 3)
 directionalLight.position.set(1, 1, 0)
 scene.add(directionalLight)
 
-const light_second = new THREE.AmbientLight( 0xe2e2e2 ); // soft white light
+const light_second = new THREE.AmbientLight( 0xe2e2e2, 2.5 ); // soft white light
 scene.add( light_second );
 
 /**
@@ -144,7 +162,7 @@ const particlesCount_scene = 200;
 const radius_sphere_tel = 0.007;
 const radius_sphere_scene = 0.0005;
 
-const particles_geometry_tel = new THREE.SphereGeometry(radius_sphere_tel, 4, 4);
+const particles_geometry_tel = new THREE.SphereGeometry(radius_sphere_tel, 16, 16);
 const particles_geometry_scene = new THREE.SphereGeometry(radius_sphere_scene, 16, 16);
 
 
@@ -294,7 +312,7 @@ function scrollListener() {
         x: 1.3, 
         y: 0.5, 
         z: 0.55,
-      duration: 0.5,
+      duration: 0.1,
     }, ">");
 }
 
@@ -332,7 +350,7 @@ const tick = () =>
 
    const parallaxX = cursor.x * 0.1
    const parallaxY = - cursor.y * 0.1
-   cameraGroup.position.x += (parallaxX - cameraGroup.position.x) * 5 * deltaTime
+   cameraGroup.position.x += (parallaxX - cameraGroup.position.x) * 3 * deltaTime
    cameraGroup.position.y += (parallaxY - cameraGroup.position.y) * 2 * deltaTime
 
 //    // Animate meshes
