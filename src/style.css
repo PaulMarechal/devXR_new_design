@@ -20,6 +20,7 @@ body{
 .main_title_site{
     font-weight: 400;
     text-align: center;
+    margin-bottom: 16px;
 }
 
 #text_under_main_title{
@@ -172,6 +173,7 @@ header{
     margin-left: 15%;
     margin-top: 2%;
     border-radius: 15px;
+    box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
 }
 
 .parent_header_menu {
@@ -179,7 +181,6 @@ header{
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     height: 35px;
-    border-radius: 10px;
    
 }
 .logo-name-container{
@@ -301,6 +302,7 @@ header{
     font-weight: 400;
     letter-spacing: 0em;
     width: fit-content;
+    
 }
 .first_section_div_bento { grid-area: 5 / 3 / 10 / 12; padding: 1.5rem;}
 
