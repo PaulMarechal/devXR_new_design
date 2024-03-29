@@ -293,7 +293,7 @@ header{
 .main_title_div_bento { grid-area: 2 / 3 / 4 / 19; }
 
 .text_main_title{
-    background: -webkit-linear-gradient(0deg, #be22ff 20%, #ff279c 50%, #ff981f 80%);
+    background: -webkit-linear-gradient(0deg, #DE73D8 20%, #5dd8f7d1 50%, #fffac9da 80%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -488,7 +488,8 @@ header{
 }
 
 .gradient_text_section_one {
-    background: -webkit-linear-gradient(-61deg,#be22ff 15%,#ff279c 45%,#ff981f 75%);
+   
+    background: linear-gradient(-61deg, #DE73D8 20%, #5dd8f7d1 50%, #fffac9da 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
