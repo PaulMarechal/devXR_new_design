@@ -36,10 +36,12 @@ canvas{
     margin: auto;
     border-radius: 20px;
     background: rgb(0,0,0);
-    background-image: linear-gradient(to top left, #FFFAC9,transparent), 
-                    linear-gradient(to left, #5DD7F7, transparent),
-                    linear-gradient(to left, #DE73D8, transparent),
-                    linear-gradient(to right, #000000, transparent)
+    background-image: radial-gradient(ellipse 30% 20% at top, #FFFAC9, transparent),
+                      radial-gradient(ellipse 30% 70% at right, #5DD7F7, transparent),
+                      radial-gradient(ellipse 30% 70% at  bottom right, #DE73D8, transparent);
+
+
+            
 
  
 }
