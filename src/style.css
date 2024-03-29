@@ -39,7 +39,7 @@ canvas{
     background: -moz-linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
     background: -webkit-linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
     background: linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#de73d8",endColorstr="#5dd7f7",GradientType=1);
+    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#de73d8",endColorstr="#5dd7f7",GradientType=1); */
 }
 
 
@@ -457,7 +457,7 @@ header{
 }
 
 /* Test arguments section */
-.argument-container{
+.argument_container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -465,17 +465,21 @@ header{
     align-items: baseline;
     height: 100vh;
     justify-content: center;
+    display: none; 
+    opacity: 0; 
 }
 
 .title_avantages{
     width: 27%;
     font-size: 1.3vw;
     color: #d9d9d9;
+    margin-left: 8%;
 }
 .question-answer-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 10%;
 }
 
 .gradient_text_section_one {

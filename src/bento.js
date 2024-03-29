@@ -1,3 +1,4 @@
+// Old code 
 const window_height = window.innerHeight
 const a_propos_div = document.querySelector(".a_propos_div")
 const avantages_site_immersifs_div = document.querySelector(".avantages_site_immersifs_div")
@@ -5,6 +6,8 @@ const confiance_div = document.querySelector(".confiance_div")
 const exemple_site = document.querySelector(".exemple_site")
 const parent_bento_first_section = document.querySelector(".parent_bento_first_section")
 const remove_info_div = document.querySelectorAll(".remove_info_div")
+const argument_container = document.querySelector(".argument_container")
+const logo_div = document.querySelector(".logo_div")
 
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
@@ -56,6 +59,7 @@ function remove_inside_div() {
     });
 }
 
+/*
 function click_on_div_avantages(){
     remove_inside_div()
     reset_height_width_div()
@@ -84,7 +88,9 @@ function click_on_div_avantages(){
         }
     }, 600);
 }
+*/
 
+/*
 function click_on_div_realisations(){
     reset_height_width_div()
     remove_inside_div()
@@ -110,7 +116,9 @@ function click_on_div_realisations(){
         }
     }, 600);
 }
+*/
 
+/*
 function click_on_div_exemples(){
     reset_height_width_div()
     remove_inside_div()
@@ -136,7 +144,8 @@ function click_on_div_exemples(){
         }
     }, 600);
 }
-
+*/
+/*
 function click_on_div_a_propos(){
     reset_height_width_div()
     remove_inside_div()
@@ -156,12 +165,12 @@ function click_on_div_a_propos(){
         }
     }, 600);
 }
-
+*/
 /*******************/
 /*  Mobile version */
 /*******************/
-
 /*  Portrait mode  */
+/*
 function mobile_click_on_div_a_propos(){
     reset_height_width_div()
     setTimeout(() => { 
@@ -180,7 +189,8 @@ function mobile_click_on_div_a_propos(){
         }
     }, 600);
 }
-
+*/
+/*
 function mobile_click_on_div_avantages(){
     reset_height_width_div()
     setTimeout(() => { 
@@ -213,7 +223,8 @@ function mobile_click_on_div_avantages(){
         }
     }, 600);
 }
-
+*/
+/*
 function mobile_click_on_div_realisations(){
     reset_height_width_div()
     setTimeout(() => { 
@@ -254,7 +265,8 @@ function mobile_click_on_div_realisations(){
         }
     }, 600);
 }
-
+*/
+/*
 function mobile_click_on_div_exemples(){
     reset_height_width_div()
 
@@ -298,7 +310,8 @@ function mobile_click_on_div_exemples(){
         }
     }, 600);
 }
-
+*/
+/*
 function click_on_top_menu_event() { 
     if( navigator.userAgent.match(/iPhone/i)
     || navigator.userAgent.match(/webOS/i)
@@ -323,6 +336,27 @@ function click_on_top_menu_event() {
 }
 
 click_on_top_menu_event()
+*/
+// End old code 
 
+// New code 
 
+a_propos_div.addEventListener("click", () => {
+    setTimeout(() => { 
+        parent_bento_first_section.style.opacity = "0"
+        argument_container.style.display = "block"
+        setTimeout(() => {
+            parent_bento_first_section.style.display = "none"
+            argument_container.style.opacity = "1"
+        }, 200);
+    }, 500);
+})
 
+logo_div.addEventListener("click", () => {
+    parent_bento_first_section.style.display = "grid"
+    argument_container.style.opacity = "0"
+    setTimeout(() => {
+        parent_bento_first_section.style.opacity = "1"
+        argument_container.style.display = "none"
+    }, 200);
+})

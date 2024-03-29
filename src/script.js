@@ -5,6 +5,7 @@ import * as Arguments_anim_tab from './arguments_anim_tab.js'
 import * as customCursor from './customCursor.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as Animation_text from "./animation_text_gsap.js";
+import * as Bento from "./bento.js"
 
 /**
  * Base
@@ -68,7 +69,8 @@ const loader = new GLTFLoader();
 
 loader.load(
 	// resource URL
-	'https://devxr.fr/assets/models/handPhoneGlass.glb',
+	// 'https://devxr.fr/assets/models/handPhoneGlass.glb',
+	'./assets/models/handPhoneGlass.glb',
 	// called when the resource is loaded
 	function ( handModel ) {
 
