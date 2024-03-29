@@ -35,11 +35,12 @@ body{
 canvas{
     margin: auto;
     border-radius: 20px;
-    background: rgb(222,115,216);
-    background: -moz-linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
-    background: -webkit-linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
-    background: linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#de73d8",endColorstr="#5dd7f7",GradientType=1);
+    background-image: linear-gradient(to left top, #5dd7f7, #65a6cf, #65789d, #554f68, #382d38, #292026, #191316, #000000, #000000, #000000, #000000, #000000);
+    /* background: rgb(0,0,0);
+background: -moz-linear-gradient(90deg, rgba(0,0,0,1) 35%, rgba(93,215,247,0.6881127450980392) 58%, rgba(251,249,171,0.6404936974789917) 78%, rgba(222,115,216,0.3211659663865546) 100%);
+background: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 35%, rgba(93,215,247,0.6881127450980392) 58%, rgba(251,249,171,0.6404936974789917) 78%, rgba(222,115,216,0.3211659663865546) 100%);
+background: linear-gradient(90deg, rgba(0,0,0,1) 35%, rgba(93,215,247,0.6881127450980392) 58%, rgba(251,249,171,0.6404936974789917) 78%, rgba(222,115,216,0.3211659663865546) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#de73d8",GradientType=1); */
 }
 
 
