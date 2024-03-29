@@ -36,9 +36,9 @@ canvas{
     margin: auto;
     border-radius: 20px;
     background: rgb(0,0,0);
-    background-image: radial-gradient(ellipse 90% 60% at top right, #FFFAC9, transparent),
-                      radial-gradient(ellipse 90% 90% at right, #5DD7F7, transparent),
-                      radial-gradient(ellipse 60% 80% at  bottom right, #DE73D8, transparent);
+    background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
+                      radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
+                      radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
  
 }
 
@@ -179,8 +179,15 @@ header{
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     height: 35px;
+    border-radius: 10px;
+   
 }
-
+.logo-name-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .logo_div { 
     grid-area: 1 / 1 / 2 / 2; 
     margin: auto 0 auto 2rem;
