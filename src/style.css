@@ -63,10 +63,7 @@ a:hover{cursor: none;}
 
 .section, .section_first {
     display: flex;
-    align-items: center;
-    height: 100vh;
     position: relative;
-    /* font-family: 'Cabin', sans-serif; */
     color: #414141;
     text-transform: uppercase;
     font-size: 7vmin;
@@ -75,8 +72,15 @@ a:hover{cursor: none;}
     font-weight: 500;
 }
 
+.section_first{
+    align-items: center;
+    height: 100vh;
+}
+
 .section{
+    height: 90vh;
     margin-bottom: 150%;
+    align-items: center;
 }
 
 .white_text{
@@ -473,6 +477,16 @@ header{
     flex-direction: column;
     align-items: center;
 }
+
+.gradient_text_section_one {
+    background: -webkit-linear-gradient(-61deg,#be22ff 15%,#ff279c 45%,#ff981f 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    font-size: 4vw;
+    overflow: hidden;
+}
+
 
 .faq {
     max-width: 700px; margin-top: 2rem;

@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import * as Arguments_anim_tab from './arguments_anim_tab.js'
 import * as customCursor from './customCursor.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import * as Animation_text from "./animation_text_gsap.js";
+
 /**
  * Base
  */
