@@ -4,7 +4,7 @@ const typeSplit = new SplitType('[animate]', {
 });
 
 gsap.from('[animate] .char', {
-    opacity: 0,
+    opacity: 0.1,
     duration: 7, // Time anim for letters
     ease: "power1.out", // Animation type "type out"
     stagger: 0.05, // letters-spacing

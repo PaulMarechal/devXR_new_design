@@ -109,6 +109,7 @@ a:hover{cursor: none;}
 
 section:nth-child(odd) {
     justify-content: flex-end;
+    margin-right: 8%;
 }
 
 .ma{
