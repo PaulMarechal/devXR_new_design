@@ -68,20 +68,22 @@ a:hover{cursor: none;}
     color: white;
     text-transform: uppercase;
     font-size: 7vmin;
-    padding-left: 20%;
-    padding-right: 10%;
     font-weight: 500;
 }
 
 .section_first{
     align-items: center;
     height: 100vh;
+    padding-right: 17%;
+    padding-left: 18%;
 }
 
 .section{
+    padding-left: 20%;
     height: 90vh;
     margin-bottom: 150%;
     align-items: center;
+    padding-right: 10%;
 }
 
 .white_text{
