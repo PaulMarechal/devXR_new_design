@@ -6,6 +6,7 @@ import * as customCursor from './customCursor.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as Animation_text from "./animation_text_gsap.js";
 import * as Bento from "./bento.js"
+import * as Realisations from "./realisations_anim.js";
 
 /**
  * Base
@@ -101,7 +102,7 @@ loader.load(
 	},
 	// called while loading is progressing
 	function ( xhr ) {
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+		// console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 	},
 	// called when loading has errors
 	function ( error ) {
@@ -160,7 +161,7 @@ scene.add( light_second );
  * Particles
  */
 // Geometry
-const particlesCount_tel = 300;
+const particlesCount_tel = 100;
 const particlesCount_scene = 200;
 
 const radius_sphere_tel = 0.007;

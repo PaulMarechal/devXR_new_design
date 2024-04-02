@@ -112,7 +112,7 @@ a:hover{cursor: none;}
 
 section:nth-child(odd) {
     justify-content: flex-end;
-    margin-right: 8%;
+    /* margin-right: 8%; */
 }
 
 .ma{
@@ -509,7 +509,6 @@ header{
     max-width: 700px; margin-top: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #fff;
-    cursor: pointer;
 }
 
 .question {
@@ -565,7 +564,82 @@ svg{
     }
 }
 /* fin test arguments section */
+/* test display parallax card*/
+.realisations_container{
+    display: none;
+    opacity: 0;
+}
 
+.display_realisations_icons{
+    display: flex; 
+    flex-direction: space-between;
+    width: 75%;
+    margin: auto;
+}
+
+.tilt_item_card {
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+}
+
+.hover-container {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    margin: 50px auto;
+}
+  
+.title_cards_realisations {
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    z-index: 100;
+    left: 8%;
+    top: 80%;
+    pointer-events: none;
+    color: #fff;
+}
+  
+.tilt_item_card-inner {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    outline: 1.5px solid #fff; 
+    outline-offset: -10px;
+    border-radius: 17px;
+}
+
+.tilt_item_card-inner{
+    border: 0px solid #fff;
+    transition: border 0.5s ease-out; 
+}
+
+.tilt_item_card-inner:hover{
+    border: 2px solid #fff;
+}
+
+.catacombes_card_realisations{
+    background: #fff url("./assets/images/catacombes/geurinet_escalier_3.jpeg") center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carte_metro_card_realisations{
+    background: #fff url("./assets/images/metro/renduTest_2_.webp") center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.geo_tags_card_realisations{
+    background: #fff url("") center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* fin test parallax card */
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
     /* font */
