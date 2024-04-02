@@ -623,19 +623,19 @@ svg{
 }
 
 .catacombes_card_realisations{
-    background: #fff url("./assets/images/catacombes/geurinet_escalier_3.jpeg") center;
+    background: #000 url("./assets/images/catacombes/geurinet_escalier_3.jpeg") center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .carte_metro_card_realisations{
-    background: #fff url("./assets/images/metro/renduTest_2_.webp") center;
+    background: #000 url("./assets/images/metro/renduTest_2_.webp") center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .geo_tags_card_realisations{
-    background: #fff url("") center;
+    background: #000 url("") center;
     background-repeat: no-repeat;
     background-size: cover;
 }
