@@ -18,7 +18,7 @@
 
     .title_navigo{
     text-transform: math-auto;
-    font-size: 2.2em;
+    font-size: 3em;
     font-weight: 500;
     color: white;
     margin-bottom: 2em;
@@ -63,6 +63,14 @@
         padding: 2em;
         width: 50%;
 
+    }
+
+    .card h3{
+        font-size: 2em;
+    }
+    .card p{
+        font-size: 1.5em;
+        font-weight: 100;
     }
     
 
