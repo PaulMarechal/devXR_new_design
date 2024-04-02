@@ -495,7 +495,6 @@ header{
 }
 
 .gradient_text_section_one {
-   
     background: linear-gradient(-61deg, #DE73D8 20%, #5dd8f7d1 50%, #fffac9da 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
