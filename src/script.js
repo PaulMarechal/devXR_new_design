@@ -70,7 +70,7 @@ const loader = new GLTFLoader();
 loader.load(
 	// resource URL
 	// 'https://devxr.fr/assets/models/handPhoneGlass.glb',
-	'./assets/models/handPhoneGlass.glb',
+    './assets/models/handPhoneGlass.glb',
 	// called when the resource is loaded
 	function ( handModel ) {
 

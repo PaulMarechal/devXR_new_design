@@ -20,6 +20,7 @@ body{
 .main_title_site{
     font-weight: 400;
     text-align: center;
+    margin-bottom: 16px;
 }
 
 #text_under_main_title{
@@ -35,11 +36,11 @@ body{
 canvas{
     margin: auto;
     border-radius: 20px;
-    background: rgb(222,115,216);
-    background: -moz-linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
-    background: -webkit-linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
-    background: linear-gradient(38deg, rgba(248,136,242,0.8) 0%, rgba(255,250,201,0.5) 50%, rgba(58,214,255,0.8) 100%);
-    /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#de73d8",endColorstr="#5dd7f7",GradientType=1); */
+    background: rgb(0,0,0);
+    background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
+                      radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
+                      radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
+ 
 }
 
 
@@ -64,23 +65,25 @@ a:hover{cursor: none;}
 .section, .section_first {
     display: flex;
     position: relative;
-    color: #414141;
+    color: white;
     text-transform: uppercase;
     font-size: 7vmin;
-    padding-left: 20%;
-    padding-right: 10%;
     font-weight: 500;
 }
 
 .section_first{
     align-items: center;
     height: 100vh;
+    padding-right: 17%;
+    padding-left: 18%;
 }
 
 .section{
+    padding-left: 20%;
     height: 90vh;
     margin-bottom: 150%;
     align-items: center;
+    padding-right: 10%;
 }
 
 .white_text{
@@ -168,11 +171,12 @@ header{
     position: fixed;
     height: 40px;
     width: 70%;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.5);
     z-index: 2;
     margin-left: 15%;
     margin-top: 2%;
     border-radius: 15px;
+    box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
 }
 
 .parent_header_menu {
@@ -180,8 +184,14 @@ header{
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     height: 35px;
+   
 }
-
+.logo-name-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .logo_div { 
     grid-area: 1 / 1 / 2 / 2; 
     margin: auto 0 auto 2rem;
@@ -286,7 +296,7 @@ header{
 .main_title_div_bento { grid-area: 2 / 3 / 4 / 19; }
 
 .text_main_title{
-    background: -webkit-linear-gradient(0deg, #be22ff 20%, #ff279c 50%, #ff981f 80%);
+    background: -webkit-linear-gradient(0deg, #DE73D8 20%, #5dd8f7d1 50%, #fffac9da 80%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -295,6 +305,7 @@ header{
     font-weight: 400;
     letter-spacing: 0em;
     width: fit-content;
+    
 }
 .first_section_div_bento { grid-area: 5 / 3 / 10 / 12; padding: 1.5rem;}
 
@@ -484,7 +495,8 @@ header{
 }
 
 .gradient_text_section_one {
-    background: -webkit-linear-gradient(-61deg,#be22ff 15%,#ff279c 45%,#ff981f 75%);
+   
+    background: linear-gradient(-61deg, #DE73D8 20%, #5dd8f7d1 50%, #fffac9da 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
