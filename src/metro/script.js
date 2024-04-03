@@ -1,8 +1,8 @@
 import * as customCursor from '../customCursor.js';
 
-const width_page = window.innerWidth * 0.8
-const height_page = window.innerHeight * 0.95
-const margin_top = (window.innerHeight - (window.innerHeight * 0.95)) /2
+// const width_page = window.innerWidth * 0.8
+// const height_page = window.innerHeight * 0.95
+// const margin_top = (window.innerHeight - (window.innerHeight * 0.95)) /2
 
 const section_metro = document.querySelector('.section_metro')
 

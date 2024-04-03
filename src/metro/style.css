@@ -9,10 +9,18 @@
     background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
                       radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
                       radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
-    margin: auto;
-    border-radius: 20px;
+    
     padding-top: 7em; /* en attendant*/
+   height: 100vh;
+ 
   
+}
+
+.metro_full_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -25,26 +33,25 @@
 
     }
 
-    .metro_container{
+    .metro_presentation_container{
         display: flex;
         flex-direction: row;
         gap: 1em;
     }
 
-    .left_container{
+
+   .rendu{
+    width: 22em;
+    object-fit: cover;
+    padding-left: 12em; /* en attendant */
+  }
+    
+
+    .right_container_presentation{
         display: flex;
         flex-direction: column;
-        gap: 1em;
-    }
-
-    .left_container img{
-        width: 15em;
-        object-fit: cover;
-    }
-
-    .right_container{
-        display: flex;
-        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
         color: white;
         gap: 1em;
      
@@ -94,8 +101,19 @@
 
 
     }
-
-    .container_mode_emploi{
+    
+    .metro_mode_emploi_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+    }
+    
+    video {
+        width: 15em;
+        flex-shrink: 0; /* Pour empêcher la vidéo de réduire sa taille */
+    }
+    .right_container_mode_emploi{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -114,9 +132,12 @@
         flex-direction: row;
         align-items: center;
         gap: 1em;
+        color: white;
     }
 
     .item_mode_emploi h1{
         font-weight: bold;
         font-size: 3em;
+        
     }
+
