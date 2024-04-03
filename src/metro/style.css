@@ -40,12 +40,7 @@
     }
 
 
-   .rendu{
-    width: 22em;
-    object-fit: cover;
-    padding-left: 12em; /* en attendant */
-  }
-    
+
 
     .right_container_presentation{
         display: flex;
@@ -109,9 +104,9 @@
         gap: 1em;
     }
     
-    video {
-        width: 15em;
-        flex-shrink: 0; /* Pour empêcher la vidéo de réduire sa taille */
+    #video_metro {
+        width: 25em;
+        border-radius: 20px;
     }
     .right_container_mode_emploi{
         display: flex;
