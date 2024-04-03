@@ -46,3 +46,17 @@ function handleHover() {
 }
 
 handleHover();
+
+const parallaxImage = document.querySelector('.parallax_image');
+
+window.addEventListener('mousemove', function(e) {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    const offsetX = mouseX / window.innerWidth - 0.5;
+    const offsetY = mouseY / window.innerHeight - 0.5;
+
+    const parallaxAmount = 30; // Ajustez la quantité de parallaxe selon vos besoins
+
+    parallaxImage.style.transform = `translate(${offsetX * parallaxAmount}px, ${offsetY * parallaxAmount}px)`;
+});

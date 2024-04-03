@@ -1,12 +1,12 @@
 import * as THREE from 'three';
 import GUI from 'lil-gui';
 import gsap from 'gsap';
+import * as Realisations from "./realisations_anim.js";
 import * as Arguments_anim_tab from './arguments_anim_tab.js'
 import * as customCursor from './customCursor.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import * as Animation_text from "./animation_text_gsap.js";
 import * as Bento from "./bento.js"
-import * as Realisations from "./realisations_anim.js";
 
 /**
  * Base
