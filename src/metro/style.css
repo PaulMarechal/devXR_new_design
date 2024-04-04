@@ -10,9 +10,8 @@
                       radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
                       radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
     
-    padding-top: 7em; /* en attendant*/
-   height: 100vh;
- 
+   
+
   
 }
 
@@ -100,7 +99,6 @@
     .metro_mode_emploi_container {
         display: flex;
         flex-direction: row;
-        align-items: center;
         gap: 1em;
     }
     
