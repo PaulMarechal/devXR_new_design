@@ -2,18 +2,23 @@
 
 /* *{border: 1px solid #000} */
 
-.section_metro{
-  
-
+body{
     background: rgb(0,0,0);
     background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
                       radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
                       radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
+}
+
+.section_metro{
+    /* background: rgb(0,0,0);
+    background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
+                      radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
+                      radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent); */
     
     padding-top: 7em; /* en attendant*/
-   height: 100vh;
- 
-  
+    height: 100vh;
+    width: 70%;
+    margin: auto;
 }
 
 .metro_full_container{
