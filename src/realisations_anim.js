@@ -1,6 +1,11 @@
 const section_second = document.querySelector('.section_second')
+const tilt_item_card = document.querySelector('.tilt_item_card')
+const tilt_item_cards = document.querySelectorAll('.tilt_item_card');
+const under_title_cards_realisations  = document.querySelectorAll('.under_title_cards_realisations');
+const title_cards_realisations = document.querySelectorAll('.title_cards_realisations');
 section_second.style.height = "-webkit-fill-available"
 section_second.style.marginBottom = "5rem"
+
 
 function handleHover() {
     let ratio = 0.10;
@@ -25,21 +30,23 @@ function handleHover() {
             let relativeOffsetY = absoluteOffsetY * 100 / h * 2 * ratio;
 
             children.forEach(function(child) {
-                child.style.transition = 'transform 0.2s ease-out'; // Transition plus fluide
+                child.style.transition = 'transform 0.2s ease-out, top 0.5s ease-out'; 
                 child.style.transform = `rotateY(${relativeOffsetX}deg) rotateX(${relativeOffsetY * -1}deg)`;
             });
 
-            el.querySelector('h3').style.transition = 'transform 0.2s ease-out'; // Transition plus fluide
+            el.querySelector('h3').style.transition = 'transform 0.2s ease-out, top 0.5s ease-out';
             el.querySelector('h3').style.transform = 'translateX(' + relativeOffsetX + 'px)';
+            el.querySelector('.under_title_cards_realisations').style.transition = 'transform 0.2s ease-out, top 0.5s ease-out'; 
+            el.querySelector('.under_title_cards_realisations').style.transform = 'translateX(' + relativeOffsetX + 'px)';
         });
 
         container.addEventListener('mouseleave', function() {
             children.forEach(function(child) {
-                child.style.transition = 'transform 1s ease-out'; // Transition plus fluide
+                child.style.transition = 'transform 1s ease-out, top 0.5s ease-out'; 
                 child.style.transform = 'none';
             });
 
-            el.querySelector('h3').style.transition = 'transform 1s ease-out'; // Transition plus fluide
+            el.querySelector('h3').style.transition = 'transform 1s ease-out, , top 0.5s ease-out'; 
             el.querySelector('h3').style.transform = 'none';
         });
     });
@@ -47,3 +54,14 @@ function handleHover() {
 
 handleHover();
 
+tilt_item_cards.forEach((tilt_item_card, index) => {
+    tilt_item_card.addEventListener("mouseover", (event) => {
+        under_title_cards_realisations[index].style.top = "80%";
+        title_cards_realisations[index].style.top = "62%";
+    });
+
+    tilt_item_card.addEventListener("mouseout", (event) => {
+        under_title_cards_realisations[index].style.top = "102%";
+        title_cards_realisations[index].style.top = "80%";
+    });
+});
