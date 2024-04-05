@@ -323,7 +323,30 @@ function scrollListener() {
 
 scrollListener();
 
+/*
+function go_to_bottom(){
+    bottom_pages.forEach(bottom_page => {
+        bottom_page.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            
+            window.location.href = 'index.html';
+        });
+    });
+    
+    window.addEventListener('load', function() {
+        setTimeout(() => {      
+            var windowHeight = window.innerHeight;
+            var pageHeight = document.body.scrollHeight;
         
+            window.scrollTo({
+                top: pageHeight,
+                behavior: 'smooth'
+            });
+
+        }, 500); 
+    });
+}
+*/
 
 /**
  * Cursor

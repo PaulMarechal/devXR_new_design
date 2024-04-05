@@ -475,7 +475,7 @@ header{
     flex-wrap: wrap;
     gap: 8em;
     align-items: baseline;
-    height: 100vh;
+    height: max-content;
     justify-content: center;
     display: none; 
     opacity: 0; 

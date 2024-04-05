@@ -10,3 +10,4 @@ section_metro.style.height = `${height_page}px`
 section_metro.style.width = `${width_page}px`
 section_metro.style.marginTop = `${margin_top}px`
 
+go_to_bottom()

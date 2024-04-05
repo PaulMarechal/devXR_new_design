@@ -398,15 +398,18 @@ confiance_div.addEventListener("click", () => {
 bottom_pages.forEach(bottom_page => {
     bottom_page.addEventListener('click', function(event) {
         setTimeout(() => {      
-            event.preventDefault(); // Empêche le comportement par défaut du lien
+            event.preventDefault(); 
         
             var windowHeight = window.innerHeight;
             var pageHeight = document.body.scrollHeight;
         
             window.scrollTo({
-                top: pageHeight - windowHeight,
-                behavior: 'smooth' // Pour un défilement fluide
+                top: (pageHeight - windowHeight) + "10",
+                behavior: 'smooth' 
             });
         }, 500);
     });
 });
+
+
+
