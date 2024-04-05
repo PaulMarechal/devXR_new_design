@@ -161,23 +161,23 @@ scene.add( light_second );
  * Particles
  */
 // Geometry
-const particlesCount_tel = 100;
+const particlesCount_tel = 250;
 const particlesCount_scene = 200;
 
 const radius_sphere_tel = 0.007;
-const radius_sphere_scene = 0.0005;
+const radius_sphere_scene = 0.0007;
 
 const particles_geometry_tel = new THREE.SphereGeometry(radius_sphere_tel, 16, 16);
 const particles_geometry_scene = new THREE.SphereGeometry(radius_sphere_scene, 16, 16);
 
 
 // Spheres for scene 
-for (let i = 0; i < particlesCount_tel; i++) {
+for (let i = 0; i < particlesCount_scene; i++) {
     const sphere = new THREE.Mesh(particles_geometry_tel, new THREE.MeshBasicMaterial({ color: parameters.materialColorSmallPlanets }));
     
-    sphere.position.x = (Math.random() - 0.5) * 6;
+    sphere.position.x = (Math.random() - 0.5) * 8;
     sphere.position.y = objectsDistance - 0.5 - Math.random() * 7
-    sphere.position.z = (Math.random() - 0.5) * 4;
+    sphere.position.z = (Math.random() - 0.5);
     
     scene.add(sphere);
 }
@@ -187,7 +187,7 @@ for (let i = 0; i < particlesCount_tel; i++) {
     const sphere = new THREE.Mesh(particles_geometry_scene, new THREE.MeshBasicMaterial({ color: parameters.materialColorSmallPlanets }));
 
     sphere.position.x = (Math.random() + 0.7) * 1;
-    sphere.position.y = objectsDistance - 3 - Math.random() * 1.7
+    sphere.position.y = objectsDistance - 3 - Math.random() * 1.9
     sphere.position.z = (Math.random() - 0.1) * 0.7;
 
     scene.add(sphere);
@@ -316,7 +316,7 @@ function scrollListener() {
     timeline.to(camera.position, {
         x: 1.3, 
         y: 0.5, 
-        z: 0.55,
+        z: 0.75,
       duration: 0.1,
     }, ">");
 }

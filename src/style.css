@@ -81,7 +81,7 @@ a:hover{cursor: none;}
 .section{
     padding-left: 20%;
     height: 90vh;
-    margin-bottom: 150%;
+    margin-bottom: 20%;
     align-items: center;
     padding-right: 10%;
 }
@@ -571,9 +571,10 @@ svg{
 
 .display_realisations_icons{
     display: flex; 
-    flex-direction: space-between;
+    flex-direction: row;
     width: 75%;
     margin: auto;
+    height: auto;
 }
 
 .tilt_item_card {

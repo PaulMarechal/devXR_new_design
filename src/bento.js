@@ -9,7 +9,7 @@ const remove_info_div = document.querySelectorAll(".remove_info_div")
 const argument_container = document.querySelector(".argument_container")
 const logo_div = document.querySelector(".logo_div")
 const realisations_container = document.querySelector(".realisations_container")
-
+const bottom_pages = document.querySelectorAll(".bottom_page")
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
@@ -394,3 +394,19 @@ confiance_div.addEventListener("click", () => {
     }, 500);
 });
 
+
+bottom_pages.forEach(bottom_page => {
+    bottom_page.addEventListener('click', function(event) {
+        setTimeout(() => {      
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+        
+            var windowHeight = window.innerHeight;
+            var pageHeight = document.body.scrollHeight;
+        
+            window.scrollTo({
+                top: pageHeight - windowHeight,
+                behavior: 'smooth' // Pour un défilement fluide
+            });
+        }, 500);
+    });
+});
