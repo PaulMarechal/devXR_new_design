@@ -1,53 +1,48 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    var cursor = document.querySelector(".custom-cursor");
-    var links = document.querySelectorAll("a");
-    var faq_link = document.querySelectorAll(".faq");
-    var initCursor = false;
-  
-    for (var i = 0; i < links.length; i++) {
-        var selfLink = links[i];
-  
-        selfLink.addEventListener("mouseover", function() {
-            cursor.classList.add("custom-cursor--link");
-        });
-        selfLink.addEventListener("mouseout", function() {
-            cursor.classList.remove("custom-cursor--link");
-        });
+    const cursor = document.querySelector(".custom-cursor");
+    const links = document.querySelectorAll("a");
+    const linkOthers = document.querySelectorAll(".carte_metro_section, .catacombes_section");
+    const faqLinks = document.querySelectorAll(".faq");
+
+    let initCursor = false;
+
+    function handleLinkHover() {
+        cursor.classList.toggle("custom-cursor--link");
     }
 
-    for (var i = 0; i < faq_link.length; i++) {
-        var selfLink = faq_link[i];
-  
-        selfLink.addEventListener("mouseover", function() {
-            cursor.classList.add("custom-cursor--link");
-        });
-        selfLink.addEventListener("mouseout", function() {
-            cursor.classList.remove("custom-cursor--link");
-        });
-    }
+    function moveCursor(e) {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
 
-    window.onmousemove = function(e) {
-        var mouseX = e.clientX;
-        var mouseY = e.clientY;
-        
         if (!initCursor) {
-            TweenLite.to(cursor, 0.3, {
-                opacity: 1
-            });
+            TweenLite.to(cursor, 0.3, { opacity: 1 });
             initCursor = true;
         }
-      
-        TweenLite.to(cursor, 0, {
-            top: mouseY + "px",
-            left: mouseX + "px"
-        });
-    };
-  
-    window.onmouseout = function(e) {
-        TweenLite.to(cursor, 0.3, {
-            opacity: 0
-        });
+
+        TweenLite.to(cursor, 0, { top: mouseY + "px", left: mouseX + "px" });
+    }
+
+    function hideCursor() {
+        TweenLite.to(cursor, 0.3, { opacity: 0 });
         initCursor = false;
-    };
+    }
+
+    links.forEach(link => {
+        link.addEventListener("mouseover", handleLinkHover);
+        link.addEventListener("mouseout", handleLinkHover);
+    });
+
+    faqLinks.forEach(link => {
+        const documentPage = document.querySelector(link.getAttribute("href"));
+        link.addEventListener("mouseover", handleLinkHover);
+        link.addEventListener("mouseout", handleLinkHover);
+    });
+
+    linkOthers.forEach(link => {
+        link.addEventListener("mouseover", handleLinkHover);
+        link.addEventListener("mouseout", handleLinkHover);
+    });
+
+    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("mouseout", hideCursor);
 });
-  

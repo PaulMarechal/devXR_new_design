@@ -10,6 +10,9 @@ const argument_container = document.querySelector(".argument_container")
 const logo_div = document.querySelector(".logo_div")
 const realisations_container = document.querySelector(".realisations_container")
 const bottom_pages = document.querySelectorAll(".bottom_page")
+const carte_metro_section = document.querySelector(".carte_metro_section")
+const show_navigo_page = document.querySelector(".show_navigo_page")
+const close_icon = document.querySelector(".icon-tabler-square-rounded-x")
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
@@ -411,5 +414,16 @@ bottom_pages.forEach(bottom_page => {
     });
 });
 
+carte_metro_section.addEventListener('click', () => {
+    show_navigo_page.style.display = "block"; 
+    setTimeout(() => {
+        show_navigo_page.style.opacity = 1;
+    }, 500);
+});
 
-
+close_icon.addEventListener('click', () => {
+    show_navigo_page.style.opacity = 0;
+    setTimeout(() => {
+        show_navigo_page.style.display = "none";   
+    }, 100);
+});

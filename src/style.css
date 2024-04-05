@@ -468,6 +468,38 @@ header{
     width: -webkit-fill-available;
 }
 
+.show_navigo_page{
+    display: none;
+    opacity: 0;
+    position: fixed;
+    height: 97%;
+    width: 95%;
+    background: #fff;
+    top: 0;
+    margin-top: 0.5%;
+    margin-left: 2.5%;
+    border-radius: 20px;
+    transition: opacity 0.5s ease-out;
+}
+
+.icon-tabler-square-rounded-x{
+    position: absolute;
+    right: 1px;
+    transition: stroke 0.5s ease-out;
+}
+
+.background_icon_close{
+    background: #ffffff00;
+    transition: fill 0.5s ease-out;
+}
+.icon-tabler-square-rounded-x:hover{
+    stroke: red;
+}
+
+.background_icon_close:hover{
+    fill: #ff00006b
+}
+
 /* Test arguments section */
 .argument_container{
     display: flex;

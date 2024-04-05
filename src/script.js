@@ -21,7 +21,7 @@ const scene = new THREE.Scene()
 /**
  * Debug
  */
-const gui = new GUI()
+// const gui = new GUI()
 
 
 const parameters = { 
@@ -239,11 +239,11 @@ const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.01,
 camera.position.z = 6
 cameraGroup.add(camera)
 
-const cameraFolder = gui.addFolder('Camera')
-cameraFolder.add(camera.position, 'x', 0, Math.PI * 2)
-cameraFolder.add(camera.position, 'y', 0, Math.PI * 2)
-cameraFolder.add(camera.position, 'z', 0, Math.PI * 2)
-cameraFolder.close()
+// const cameraFolder = gui.addFolder('Camera')
+// cameraFolder.add(camera.position, 'x', 0, Math.PI * 2)
+// cameraFolder.add(camera.position, 'y', 0, Math.PI * 2)
+// cameraFolder.add(camera.position, 'z', 0, Math.PI * 2)
+// cameraFolder.close()
 
 /**
  * Renderer
