@@ -316,7 +316,7 @@ function scrollListener() {
     timeline.to(camera.position, {
         x: 1.3, 
         y: 0.5, 
-        z: 0.75,
+        z: 0.55,
       duration: 0.1,
     }, ">");
 }

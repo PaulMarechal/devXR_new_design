@@ -12,7 +12,7 @@ const realisations_container = document.querySelector(".realisations_container")
 const bottom_pages = document.querySelectorAll(".bottom_page")
 const carte_metro_section = document.querySelector(".carte_metro_section")
 const show_navigo_page = document.querySelector(".show_navigo_page")
-const close_icon = document.querySelector(".icon-tabler-square-rounded-x")
+const close_icon = document.querySelector(".icon-tabler-x")
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
@@ -346,7 +346,7 @@ click_on_top_menu_event()
 // New code 
 
 function elemnt_to_hide(){
-    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section"]
+    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section", ".show_navigo_page"]
     for (var i = 0; i < element_to_hide.length; i++) {
         const elem = document.querySelector(`${element_to_hide[i]}`)
         elem.style.opacity = "0"
@@ -418,6 +418,10 @@ carte_metro_section.addEventListener('click', () => {
     show_navigo_page.style.display = "block"; 
     setTimeout(() => {
         show_navigo_page.style.opacity = 1;
+        show_navigo_page.style.width = "100%";
+        show_navigo_page.style.height = "100%";
+        show_navigo_page.style.marginTop = "0%";
+        show_navigo_page.style.marginLeft = "0%";
     }, 500);
 });
 
