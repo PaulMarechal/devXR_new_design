@@ -13,6 +13,7 @@ const bottom_pages = document.querySelectorAll(".bottom_page")
 const carte_metro_section = document.querySelector(".carte_metro_section")
 const show_navigo_page = document.querySelector(".show_navigo_page")
 const close_icon = document.querySelector(".icon-tabler-x")
+const fonctionnement_container = document.querySelector(".fonctionnement_container")
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
@@ -346,7 +347,7 @@ click_on_top_menu_event()
 // New code 
 
 function elemnt_to_hide(){
-    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section", ".show_navigo_page"]
+    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section", ".show_navigo_page", ".fonctionnement_container"]
     for (var i = 0; i < element_to_hide.length; i++) {
         const elem = document.querySelector(`${element_to_hide[i]}`)
         elem.style.opacity = "0"
@@ -383,6 +384,7 @@ logo_div.addEventListener("click", () => {
     }, 200);
 })
 
+/* Realisations */
 confiance_div.addEventListener("click", () => {
 
     elemnt_to_hide()
@@ -396,6 +398,22 @@ confiance_div.addEventListener("click", () => {
         }, 200);
     }, 500);
 });
+
+/* Fonctionnement */
+avantages_site_immersifs_div.addEventListener("click", () => {
+    
+    elemnt_to_hide()
+
+    setTimeout(() => { 
+        parent_bento_first_section.style.opacity = "0"
+        fonctionnement_container.style.display = "block"
+        setTimeout(() => {
+            parent_bento_first_section.style.display = "none"
+            fonctionnement_container.style.opacity = "1"
+        }, 200);
+    }, 500);
+});
+
 
 
 bottom_pages.forEach(bottom_page => {

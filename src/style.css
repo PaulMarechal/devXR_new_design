@@ -564,6 +564,117 @@ svg{
 }
 /* fin test arguments section */
 
+/* Fonctionnement */
+.title_fonctionnement h1 {
+    text-transform: math-auto;
+    font-size: 2.2em;
+    color: white;
+    margin-bottom: 2em;
+
+}
+
+.description_fonctionnement_container{
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+    justify-content: center;
+    align-items: center;
+}
+
+.description_fonctionnement_right{
+    width: 24em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.description_fonctionnement_left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+
+}
+.description_fonctionnement_left img{
+    border-radius: 30px;
+    width: 35em;
+}
+.text_style_fonctionnement_p{
+    font-weight: 300;
+    text-transform: math-auto;
+    color: white;
+    line-height: 2.2vw;
+    font-size: 1.4rem;
+}
+
+.onglet_video_demo{
+   border: 1px solid white;
+   border-radius: 20px ;
+   text-transform: math-auto;
+   font-weight: 200;
+   color: white;
+   padding: 0.5em;
+   text-align: center;
+   text-decoration: none; 
+}
+
+.onglet_video_demo:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.type_ar_container{
+    display: flex;
+    flex-direction: row;
+    gap: 6em;
+    margin-top: 5em;
+}
+
+.type_ar_container h1 {
+    color: white;
+    width: 25%;
+}
+
+.suivi, .localisation {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.onglet_type{
+
+    border-radius: 10px ;
+    text-align: center;
+    background-color: #FBF9AB;
+    padding: 0.5em;
+}
+
+.exemples_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.onglet_exemple{
+    border: 0.5px solid white;
+    border-radius: 20px;
+    text-transform: uppercase;
+    color: white;
+    padding: 0.2em 0.5em; 
+    margin-right: 5px; 
+    margin-bottom: 5px; 
+    font-weight: 200;
+   text-transform: math-auto;
+}
+
+.fonctionnement_container{
+    display: none; 
+    opacity: 0;
+}
+/* fin fonctionnement */
+
 /* Section metro */
 .show_navigo_page{
     display: none;
