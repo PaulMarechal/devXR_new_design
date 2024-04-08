@@ -14,6 +14,7 @@ const carte_metro_section = document.querySelector(".carte_metro_section")
 const show_navigo_page = document.querySelector(".show_navigo_page")
 const close_icon = document.querySelector(".icon-tabler-x")
 const fonctionnement_container = document.querySelector(".fonctionnement_container")
+const prestations_container = document.querySelector(".prestations_container")
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
@@ -355,25 +356,9 @@ function elemnt_to_hide(){
     }
 }
 
-
-a_propos_div.addEventListener("click", () => {
-    
-    elemnt_to_hide()
-
-    setTimeout(() => { 
-        parent_bento_first_section.style.opacity = "0"
-        argument_container.style.display = "block"
-        setTimeout(() => {
-            parent_bento_first_section.style.display = "none"
-            argument_container.style.opacity = "1"
-        }, 200);
-    }, 500);
-})
-
+/* Return home */
 logo_div.addEventListener("click", () => {
-
     elemnt_to_hide()
-
     parent_bento_first_section.style.display = "grid"
     argument_container.style.opacity = "0"
     realisations_container.style.opacity = "0"
@@ -384,36 +369,46 @@ logo_div.addEventListener("click", () => {
     }, 200);
 })
 
-/* Realisations */
-confiance_div.addEventListener("click", () => {
-
+/* Avantages */
+a_propos_div.addEventListener("click", () => {
     elemnt_to_hide()
-
     setTimeout(() => { 
         parent_bento_first_section.style.opacity = "0"
-        realisations_container.style.display = "block"
+        argument_container.style.display = "block"
         setTimeout(() => {
             parent_bento_first_section.style.display = "none"
-            realisations_container.style.opacity = "1"
+            argument_container.style.opacity = "1"
         }, 200);
     }, 500);
+})
+
+function transitionContainer(container) {
+    elemnt_to_hide();
+
+    setTimeout(() => {
+        parent_bento_first_section.style.opacity = "0";
+        container.style.display = "block";
+        setTimeout(() => {
+            parent_bento_first_section.style.display = "none";
+            container.style.opacity = "1";
+        }, 200);
+    }, 500);
+}
+
+/* Realisations */
+confiance_div.addEventListener("click", () => {
+    transitionContainer(realisations_container);
 });
 
 /* Fonctionnement */
 avantages_site_immersifs_div.addEventListener("click", () => {
-    
-    elemnt_to_hide()
-
-    setTimeout(() => { 
-        parent_bento_first_section.style.opacity = "0"
-        fonctionnement_container.style.display = "block"
-        setTimeout(() => {
-            parent_bento_first_section.style.display = "none"
-            fonctionnement_container.style.opacity = "1"
-        }, 200);
-    }, 500);
+    transitionContainer(fonctionnement_container);
 });
 
+/* Prestations */
+exemple_site.addEventListener("click", () => {
+    transitionContainer(prestations_container);
+});
 
 
 bottom_pages.forEach(bottom_page => {

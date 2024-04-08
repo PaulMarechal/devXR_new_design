@@ -675,6 +675,15 @@ svg{
 }
 /* fin fonctionnement */
 
+/* Prestations container */
+.prestations_container{
+    display: none;
+    opacity: 0;
+    height: 20rem;
+    margin: auto;
+}
+/* fin prestations */
+
 /* Section metro */
 .show_navigo_page{
     display: none;
@@ -852,8 +861,6 @@ svg{
     margin-top: 5em;
     transform: rotate(-90deg);
 }
-
-
 /* fin section metro*/
 
 /* test display parallax card*/
@@ -978,8 +985,8 @@ svg{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 /* fin test parallax card */
+
 /* Mode paysage */
 @media only screen and (min-device-width: 375px) and (max-device-width: 428px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
     /* font */
