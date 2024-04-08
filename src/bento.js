@@ -356,35 +356,8 @@ function elemnt_to_hide(){
     }
 }
 
-/* Return home */
-logo_div.addEventListener("click", () => {
-    elemnt_to_hide()
-    parent_bento_first_section.style.display = "grid"
-    argument_container.style.opacity = "0"
-    realisations_container.style.opacity = "0"
-    setTimeout(() => {
-        parent_bento_first_section.style.opacity = "1"
-        argument_container.style.display = "none"
-        realisations_container.style.display = "none"
-    }, 200);
-})
-
-/* Avantages */
-a_propos_div.addEventListener("click", () => {
-    elemnt_to_hide()
-    setTimeout(() => { 
-        parent_bento_first_section.style.opacity = "0"
-        argument_container.style.display = "block"
-        setTimeout(() => {
-            parent_bento_first_section.style.display = "none"
-            argument_container.style.opacity = "1"
-        }, 200);
-    }, 500);
-})
-
 function transitionContainer(container) {
     elemnt_to_hide();
-
     setTimeout(() => {
         parent_bento_first_section.style.opacity = "0";
         container.style.display = "block";
@@ -394,6 +367,11 @@ function transitionContainer(container) {
         }, 200);
     }, 500);
 }
+
+/* Avanatges */
+a_propos_div.addEventListener("click", () => {
+    transitionContainer(argument_container);
+});
 
 /* Realisations */
 confiance_div.addEventListener("click", () => {
@@ -409,6 +387,22 @@ avantages_site_immersifs_div.addEventListener("click", () => {
 exemple_site.addEventListener("click", () => {
     transitionContainer(prestations_container);
 });
+
+/* Return home */
+logo_div.addEventListener("click", () => {
+    elemnt_to_hide()
+    parent_bento_first_section.style.display = "grid"
+    argument_container.style.opacity = "0"
+    realisations_container.style.opacity = "0"
+    prestations_container.style.opacity = "0"
+    setTimeout(() => {
+        parent_bento_first_section.style.opacity = "1"
+        argument_container.style.display = "none"
+        realisations_container.style.display = "none"
+        prestations_container.style.display = "none"
+    }, 200);
+})
+
 
 
 bottom_pages.forEach(bottom_page => {
