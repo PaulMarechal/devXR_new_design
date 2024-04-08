@@ -404,7 +404,6 @@ logo_div.addEventListener("click", () => {
 })
 
 
-
 bottom_pages.forEach(bottom_page => {
     bottom_page.addEventListener('click', function(event) {
         setTimeout(() => {      
