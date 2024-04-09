@@ -3,6 +3,7 @@ body{
     background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
                       radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
                       radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
+                    
 }
 
 .section_catacombes{
@@ -38,7 +39,7 @@ body{
 .catacombes_presentation_container{
     display: flex;
     flex-direction: column;
-    gap: 6em;
+    gap: 3em;
     align-items: center;
 }
 
@@ -77,6 +78,7 @@ body{
     display: flex;
     flex-direction: row;
     gap: 1em;
+    justify-content: center;
 }
 
 .etiquettes_container span {
@@ -93,15 +95,13 @@ body{
 
 .catacombes_mode_emploi_container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1em;
     height: 35em;
 }
 
-#video_catacombes {
-    width: 25em;
-    border-radius: 20px;
-}
+
+
 
 .left_container_mode_full{
     display: flex;
@@ -114,14 +114,19 @@ body{
     flex-direction: row;
     align-items: center;
     gap: 1em;
+   
 }
 
 .container_explication{
     width: fit-content;
 }
 
-.qr {
-    width: 7em;
+.tract {
+    width:25em;
+    border-radius: 20px;
+}
+.mockup_tract{
+    width: 23em;
     border-radius: 20px;
 }
 
