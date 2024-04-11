@@ -13,7 +13,7 @@ const size = {
 };
 
 // Configuration de la caméra
-const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000); 
+const camera = new THREE.PerspectiveCamera(30, size.width / size.height, 0.1, 1000); 
 camera.position.z = 5; 
 
 // Ajout d'une lumière ambiante
