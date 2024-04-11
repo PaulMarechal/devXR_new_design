@@ -685,7 +685,7 @@ svg{
 /* fin prestations */
 
 /* Section metro */
-.show_navigo_page{
+.show_navigo_page, .show_catacombes_page{
     display: none;
     opacity: 0;
     position: fixed;
@@ -725,8 +725,7 @@ svg{
     fill: #ff00006b
 }
 
-
-.section_metro{
+.section_metro, .section_catacombes{
     /* background: rgb(0,0,0);
     background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
                       radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
