@@ -903,7 +903,7 @@ svg{
     transition: top 0.5s ease-out
 }
 
-.under_title_cards_realisations{
+/* .under_title_cards_realisations{
     position: absolute;
     font-weight: 200;
     font-size: 20px;
@@ -921,6 +921,40 @@ svg{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 4px 6px; 
+} */
+
+.under_title_cards_realisations{
+    text-align: center;
+    padding-top: 1em;
+    position: absolute;
+    font-weight: 200;
+    font-size: 19px;
+    text-transform: math-auto;
+    z-index: 100;
+    top: 130%;
+    margin: 0 10px;
+    pointer-events: none;
+    color: #fff;
+    transition: top 0.5s ease-out; 
+    text-decoration: none;
+    background: rgb(0,0,0);
+    background: -moz-radial-gradient(circle, rgba(0,0,0,1) 61%, rgba(255,255,255,0) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,0,0,1) 61%, rgba(255,255,255,0) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,1) 61%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
+
+
+
+    left: -1%;
+    height: 100%;
+    width: 94%;
+
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    /* backdrop-filter: blur( 4px ); */
+    /* -webkit-backdrop-filter: blur( 4px ); */
+    /* border-radius: 10px; */
+    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    /* padding: 4px 6px;  */
 }
   
 .tilt_item_card-inner {
