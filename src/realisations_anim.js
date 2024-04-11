@@ -1,5 +1,5 @@
 const section_second = document.querySelector('.section_second')
-const tilt_item_card = document.querySelector('.tilt_item_card')
+// const tilt_item_card = document.querySelector('.tilt_item_card')
 const tilt_item_cards = document.querySelectorAll('.tilt_item_card');
 const under_title_cards_realisations  = document.querySelectorAll('.under_title_cards_realisations');
 const title_cards_realisations = document.querySelectorAll('.title_cards_realisations');
@@ -55,8 +55,9 @@ function handleHover() {
 handleHover();
 
 
-
+console.log(tilt_item_cards)
 tilt_item_cards.forEach((tilt_item_card, index) => {
+    console.log(tilt_item_card)
     tilt_item_card.addEventListener("mouseover", (event) => {
         under_title_cards_realisations[index].style.top = "80%";
         title_cards_realisations[index].style.top = "62%";

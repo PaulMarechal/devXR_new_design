@@ -13,6 +13,9 @@ const bottom_pages = document.querySelectorAll(".bottom_page")
 const carte_metro_section = document.querySelector(".carte_metro_section")
 const show_navigo_page = document.querySelector(".show_navigo_page")
 const close_icon = document.querySelector(".icon-tabler-x")
+const close_icon_cata = document.querySelector(".close_icon_cata")
+const catacombes_section = document.querySelector(".catacombes_section");
+const show_catacombes_page = document.querySelector(".show_catacombes_page");
 const fonctionnement_container = document.querySelector(".fonctionnement_container")
 const prestations_container = document.querySelector(".prestations_container")
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
@@ -420,6 +423,7 @@ bottom_pages.forEach(bottom_page => {
     });
 });
 
+/* Carte métro section */
 carte_metro_section.addEventListener('click', () => {
     show_navigo_page.style.display = "block"; 
     setTimeout(() => {
@@ -435,5 +439,23 @@ close_icon.addEventListener('click', () => {
     show_navigo_page.style.opacity = 0;
     setTimeout(() => {
         show_navigo_page.style.display = "none";   
+    }, 100);
+});
+
+catacombes_section.addEventListener('click', () => {
+    show_catacombes_page.style.display = "block"; 
+    setTimeout(() => {
+        show_catacombes_page.style.opacity = 1;
+        show_catacombes_page.style.width = "100%";
+        show_catacombes_page.style.height = "100%";
+        show_catacombes_page.style.marginTop = "0%";
+        show_catacombes_page.style.marginLeft = "0%";
+    }, 500);
+});
+
+close_icon_cata.addEventListener('click', () => {
+    show_catacombes_page.style.opacity = 0;
+    setTimeout(() => {
+        show_catacombes_page.style.display = "none";   
     }, 100);
 });
