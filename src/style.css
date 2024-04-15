@@ -92,7 +92,7 @@ a:hover{cursor: none;}
 
 .section_second{
     align-items: center;
-    height: 94.5vh;
+    height: 84.5vh;
     position: relative;
     font-family: 'Cabin', sans-serif;
     color: #414141;
@@ -352,18 +352,18 @@ header{
 
 .display_elem_inside_div{
     display: inline-flex;
-    height: -webkit-fill-available;
+    height: 100%;
 }
 
 .qr_art_image{
-    object-fit: cover;
-    padding: 12px 20px;
+    padding: 0 4px;
 }
+
 .pub_div_bento { grid-area: 12 / 8 / 13 / 12; }
 .model_space_div_bento { grid-area: 12 / 3 / 13 / 8; }
 .discover_more_div_bento { grid-area: 13 / 7 / 14 / 12; }
 .pub_second_div_bento { grid-area: 13 / 3 / 14 / 7; }
-.display_qr_exemple_div_bento { grid-area: 14 / 3 / 21 / 12; }
+.display_qr_exemple_div_bento { grid-area: 14 / 3 / 21 / 12; padding: 4px;}
 .mockup_iphone_div_bento { 
     grid-area: 6 / 14 / 19 / 23; 
     text-align: center; 
@@ -379,12 +379,11 @@ header{
 
 .background_text_confiance{
     background: #000;
-    margin: 1rem;
+    margin: 2rem;
     border-radius: 20px;
     border: 1px solid #fff;
     text-align: center;
     padding: 30px;
-    height: -webkit-fill-available;
     width: min-content;
     margin-top: 1rem;
 }

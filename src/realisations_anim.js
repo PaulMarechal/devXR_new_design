@@ -3,8 +3,8 @@ const section_second = document.querySelector('.section_second')
 const tilt_item_cards = document.querySelectorAll('.tilt_item_card');
 const under_title_cards_realisations  = document.querySelectorAll('.under_title_cards_realisations');
 const title_cards_realisations = document.querySelectorAll('.title_cards_realisations');
-section_second.style.height = "-webkit-fill-available"
-section_second.style.marginBottom = "5rem"
+// section_second.style.height = "-webkit-fill-available"
+// section_second.style.marginBottom = "5rem"
 
 
 function handleHover() {
