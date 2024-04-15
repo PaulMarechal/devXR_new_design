@@ -731,9 +731,9 @@ svg{
                       radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent); */
     
     padding-top: 7em; /* en attendant*/
-   
     width: 70%;
     margin: auto;
+    margin-bottom: 3rem;
 }
 
 .metro_full_container{
@@ -857,6 +857,10 @@ svg{
 .passNavigo {
     width: 18em;
     transform: rotate(-90deg);
+}
+
+.second_section_navigo_container{
+    margin: 3rem 0;
 }
 
 .second_explication_text_navigo{
