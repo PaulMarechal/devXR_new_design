@@ -855,9 +855,17 @@ svg{
     
 }
 .passNavigo {
-    width: 25em;
-    margin-top: 5em;
+    width: 18em;
     transform: rotate(-90deg);
+}
+
+.second_explication_text_navigo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em; 
+    margin-top: 3rem;
+    color: #fff; 
 }
 /* fin section metro*/
 
