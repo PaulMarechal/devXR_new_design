@@ -604,6 +604,16 @@ svg{
     gap: 1em;
 }
 
+.list_style{
+    list-style: circle;
+    font-weight: 300;
+    text-transform: math-auto;
+    color: white;
+    line-height: 1.7vw;
+    font-size: 1.2rem;
+    padding-left: 1rem;
+}
+
 .description_fonctionnement_left{
     display: flex;
     flex-direction: column;
