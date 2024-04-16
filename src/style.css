@@ -828,15 +828,23 @@ svg{
 .metro_mode_emploi_container {
     display: flex;
     flex-direction: row;
-    gap: 6em;
+    gap: 3em;
     height: 35em;
     width: 100%;
+   
+}
+
+.pass_qr_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
 }
 
 #video_metro {
-    width: 25em;
+    width: 27em;
     border-radius: 20px;
-    margin: auto;
+   
 }
 .left_container_mode_full{
     display: flex;
@@ -851,6 +859,7 @@ svg{
 }
  .container_explication{
     width: fit-content;
+   
  }
 .qr {
     width: 7em;
@@ -872,21 +881,9 @@ svg{
     
 }
 .passNavigo {
-    width: 18em;
-    transform: rotate(-90deg);
-}
+    width:16em;
 
-.second_section_navigo_container{
-    margin: 3rem 0;
-}
 
-.second_explication_text_navigo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1em; 
-    margin-top: 3rem;
-    color: #fff; 
 }
 /* fin section metro*/
 
@@ -1263,7 +1260,8 @@ svg{
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    padding: 3em;
+   padding: 1.5em;
+
  
 }
 
