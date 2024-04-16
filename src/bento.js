@@ -351,7 +351,7 @@ click_on_top_menu_event()
 // New code 
 
 function elemnt_to_hide(){
-    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section", ".show_navigo_page", ".fonctionnement_container", ".prestations_container"]
+    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section", ".show_navigo_page", ".fonctionnement_container", ".prestations_container", ".show_catacombes_page"]
     for (var i = 0; i < element_to_hide.length; i++) {
         const elem = document.querySelector(`${element_to_hide[i]}`)
         elem.style.opacity = "0"

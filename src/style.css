@@ -1320,6 +1320,7 @@ svg{
 #video_catacombes {
     width: 20em; 
     height: auto; 
+    border-radius: 60px;
 }
 
 .right_container_mode_emploi{
