@@ -1340,3 +1340,77 @@ svg{
 }
 
 /* fin catacombes*/
+
+/* Contact */
+
+.section_contact{
+    height: 100vh;
+    
+}
+
+.illustration_container_contact{
+   padding-top: 12em;
+   display: flex;
+   justify-content: center;
+}
+
+.text_container_contact{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+    justify-content: center;
+    align-items: center;
+}
+.text_container_contact h1{
+    font-family: "Teko", sans-serif;
+    color: white;
+    font-size: 3rem;
+}
+
+.text_container_contact p{
+    color: white;
+}
+.card_illustration_contact{
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 20px;
+    width:30%;
+    height: 17em;
+    position: absolute;
+    transform: rotate(-20deg);
+    margin-top: 2em;
+    background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+    opacity: 0.2;
+
+
+}
+.illustration_container_contact img{
+    position: relative;
+    height: 22em;
+    padding-left: 4em;
+}
+
+.info_container_contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.info_container_contact h2{
+    color: black;
+    font-size: 1rem;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1em;
+
+       
+   
+  
+}
+
+
