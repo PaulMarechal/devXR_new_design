@@ -1376,7 +1376,7 @@ svg{
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 20px;
-    width:30%;
+    width:35%;
     height: 17em;
     position: absolute;
     transform: rotate(-20deg);
@@ -1387,15 +1387,14 @@ svg{
 
 }
 
-.card_illustration_contact_deux{
+.card_illustration_contact_color{
     border-radius: 20px;
-    width:30%;
+    width:35%;
     height: 17em;
-    position: absolute;
+    position: relative;
     transform: rotate(-20deg);
     margin-top: 2em;
     position: absolute;
-    background: rgb(0,0,0);
     background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
                       radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
                       radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
@@ -1411,7 +1410,7 @@ svg{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
     margin-top: 1em;
 }
 
@@ -1420,14 +1419,14 @@ svg{
     font-size: 1rem;
     background-color: white;
     border-radius: 20px;
-    padding: 1em;
+    padding: 0.5em;
   
 }
 
-.info_container_contact {
+.info_container_contact, p{
     text-transform: math-auto;
-
-    
+   
 }
+
 
 
