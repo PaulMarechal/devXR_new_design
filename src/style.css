@@ -98,7 +98,7 @@ a:hover{cursor: none;}
 
 .section_second{
     align-items: center;
-    height: 84.5vh;
+    height: -webkit-fill-available;
     position: relative;
     font-family: 'Cabin', sans-serif;
     color: #414141;
@@ -507,7 +507,8 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10%;
+    width: max-content;
+    margin: -8% 0 5rem 40%;
 }
 
 .gradient_text_section_one {
@@ -606,7 +607,7 @@ svg{
 
 .list_style{
     list-style: circle;
-    font-weight: 300;
+    font-weight: 200;
     text-transform: math-auto;
     color: white;
     line-height: 1.7vw;
@@ -626,7 +627,7 @@ svg{
     width: 35em;
 }
 .text_style_fonctionnement_p{
-    font-weight: 300;
+    font-weight: 200;
     text-transform: math-auto;
     color: white;
     line-height: 2.2vw;
@@ -909,6 +910,7 @@ svg{
     width: 75%;
     margin: auto;
     height: auto;
+    margin-bottom: 3rem;
 }
 
 .tilt_item_card {
@@ -1240,11 +1242,53 @@ svg{
     display: flex;
     flex-direction: column;
     gap: 1em;
-    height: 35em;
+    height: -webkit-fill-available;
+    margin-bottom: 3rem;
 }
 
+.container_explication_second_text p, .container_explication p{
+    font-weight: 200; 
+}
 
+.container_explication_second_text{
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 32px 0 rgba(13, 16, 57, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 1rem 1.5em;
+    color: #fff;
+    height: max-content;
+}
 
+.style_list_ul{
+    font-weight: 200;
+    padding-left: 2rem;
+}
+
+.link_website_site, .link_website_site_ra{
+    text-decoration: none;
+    color: #fff; 
+}
+
+.link_website_site_ra{
+    padding: 0 20px;
+    background: #dedede7a;
+    border-radius: 10px;
+    padding: 5px 7px;
+    border: 2px solid #fff;
+    margin: 0 1rem;
+    transition: box-shadow 0.5s ease-out;
+}
+
+.link_website_site_ra:hover{
+    box-shadow: 0 0px 10px 2px rgb(170 170 170 / 70%)
+}
+
+.link_website_site:visited, .link_website_site_ra:visited{
+    color: #fff;
+}
 
 .left_container_mode_full{
     display: flex;
@@ -1337,6 +1381,11 @@ svg{
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.right_container_mode_emploi_second{
+    display: flex;
+    flex-direction: column;
 }
 
 /* fin catacombes*/
