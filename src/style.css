@@ -1386,6 +1386,20 @@ svg{
 
 
 }
+
+.card_illustration_contact_deux{
+    border-radius: 20px;
+    width:30%;
+    height: 17em;
+    position: absolute;
+    transform: rotate(-20deg);
+    margin-top: 2em;
+    position: absolute;
+    background: rgb(0,0,0);
+    background-image: radial-gradient(ellipse 40% 50% at top right, #fffac9da, transparent),
+                      radial-gradient(ellipse 70% 90% at right, #5dd8f7d1, transparent),
+                      radial-gradient(ellipse 40% 80% at  bottom right, #DE73D8, transparent);
+}
 .illustration_container_contact img{
     position: relative;
     height: 22em;
@@ -1407,10 +1421,13 @@ svg{
     background-color: white;
     border-radius: 20px;
     padding: 1em;
-
-       
-   
   
+}
+
+.info_container_contact {
+    text-transform: math-auto;
+
+    
 }
 
 
