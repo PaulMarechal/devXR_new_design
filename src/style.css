@@ -709,6 +709,13 @@ svg{
     height: 20rem;
     margin: auto;
 }
+
+.section_contact{
+    display: none;
+    opacity: 0;
+    height: 20rem;
+    margin: auto;
+}
 /* fin prestations */
 
 /* Section metro */

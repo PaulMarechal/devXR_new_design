@@ -17,7 +17,7 @@ const close_icon_cata = document.querySelector(".close_icon_cata")
 const catacombes_section = document.querySelector(".catacombes_section");
 const show_catacombes_page = document.querySelector(".show_catacombes_page");
 const fonctionnement_container = document.querySelector(".fonctionnement_container")
-const prestations_container = document.querySelector(".prestations_container")
+const section_contact = document.querySelector(".section_contact")
 parent_bento_first_section.style.height = `${window_height * 0.85}px`
 
 function refreshOnOrientationChange() {
@@ -351,7 +351,7 @@ click_on_top_menu_event()
 // New code 
 
 function elemnt_to_hide(){
-    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section", ".show_navigo_page", ".fonctionnement_container", ".prestations_container", ".show_catacombes_page"]
+    const element_to_hide = [".argument_container", ".realisations_container", ".parent_bento_first_section", ".show_navigo_page", ".fonctionnement_container", ".section_contact", ".show_catacombes_page"]
     for (var i = 0; i < element_to_hide.length; i++) {
         const elem = document.querySelector(`${element_to_hide[i]}`)
         elem.style.opacity = "0"
@@ -386,9 +386,9 @@ avantages_site_immersifs_div.addEventListener("click", () => {
     transitionContainer(fonctionnement_container);
 });
 
-/* Prestations */
+/* Contact */
 exemple_site.addEventListener("click", () => {
-    transitionContainer(prestations_container);
+    transitionContainer(section_contact);
 });
 
 /* Return home */
@@ -397,12 +397,12 @@ logo_div.addEventListener("click", () => {
     parent_bento_first_section.style.display = "grid"
     argument_container.style.opacity = "0"
     realisations_container.style.opacity = "0"
-    prestations_container.style.opacity = "0"
+    section_contact.style.opacity = "0"
     setTimeout(() => {
         parent_bento_first_section.style.opacity = "1"
         argument_container.style.display = "none"
         realisations_container.style.display = "none"
-        prestations_container.style.display = "none"
+        section_contact.style.display = "none"
     }, 200);
 })
 
