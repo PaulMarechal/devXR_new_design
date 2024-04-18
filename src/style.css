@@ -103,7 +103,6 @@ a:hover{cursor: none;}
     font-family: 'Cabin', sans-serif;
     color: #414141;
     text-transform: uppercase;
-    padding-left: 5%;
     padding-right: 5%;
     margin-top: 10vw;
     font-weight: 500;
@@ -816,12 +815,12 @@ svg{
     width: 100%;
 }
 .subtitle{
-    font-size: 2em;
+    
     color: white;
 }
 .card p{
     font-size: 1.5em;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .etiquettes_container  {
@@ -1174,10 +1173,11 @@ svg{
 
 .title_catacombes{
 
-    font-size: 3em;
+    font-size: 4rem;
     font-weight: 500;
     color: white;
     margin-bottom: 2em;
+    position:relative;
 }
 
 .subtitle_title{
@@ -1188,12 +1188,15 @@ svg{
 
 
 
+
 .catacombes_presentation_container{
     display: flex;
     flex-direction: column;
     gap: 3em;
     align-items: center;
 }
+
+
 
 .right_container_presentation{
     display: flex;
