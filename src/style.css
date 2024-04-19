@@ -1171,19 +1171,57 @@ svg{
     gap: 5em;
 }
 
-.title_catacombes{
 
+ .top_catacombes{
+    display: flex; 
+    flex-direction: row;
+    height: 100vh;
+ }
+.title_catacombes{
     font-size: 4rem;
     font-weight: 500;
     color: white;
     margin-bottom: 2em;
-    position:relative;
+    width: 10em;
+    position: absolute;
+  z-index: 2;
+  
+ 
 }
+
+.top_catacombes img{
+  object-fit: contain;
+  position: relative;
+ right: 50px;
+  z-index: 1;
+  width: 90%;
+  height: auto;
+
+}
+
+.top_catacombe_deux{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.top_catacombe_deux_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.top_catacombe_deux_right p{
+    color: white;
+    width: 40%;
+}
+
+
 
 .subtitle_title{
     font-weight: 200;
     font-size: 0.7em;
-
 }
 
 
