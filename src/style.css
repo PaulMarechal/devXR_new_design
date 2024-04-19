@@ -1176,24 +1176,27 @@ svg{
     display: flex; 
     flex-direction: row;
     height: 100vh;
- }
+    width: auto;
+  
+  gap: 7em;
+}
+ 
 .title_catacombes{
     font-size: 4rem;
     font-weight: 500;
     color: white;
     margin-bottom: 2em;
     width: 10em;
-    position: absolute;
-  z-index: 2;
+  
   
  
 }
 
 .top_catacombes img{
   object-fit: contain;
-  position: relative;
+
  right: 50px;
-  z-index: 1;
+ 
   width: 90%;
   height: auto;
 
@@ -1419,9 +1422,10 @@ svg{
 
 
 #video_catacombes {
-    width: 20em; 
-    height: auto; 
-    border-radius: 60px;
+    width: auto;
+    height: 80%;
+
+    
 }
 
 .right_container_mode_emploi{
