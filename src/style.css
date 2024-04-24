@@ -5,16 +5,20 @@
     font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
     scrollbar-color: #717171 transparent;
     scrollbar-width: thin;
+    cursor: none!important;
 }
 
 html {
     background: #ffffff;
+    cursor: none!important;
+
 }
 
 body{
     background: #ffffff;
-    cursor: none;
     position: relative;
+    cursor: none!important;
+
 }
 
 .main_title_site{
@@ -177,12 +181,13 @@ header{
     position: fixed;
     height: 40px;
     width: 60%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255);
     z-index: 4;
     margin-left: 20%;
-    margin-top: 2%;
+    margin-top: 40px;
     border-radius: 15px;
     box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+    transition: margin-top 0.5s ease-out;
 }
 
 .parent_header_menu {

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const mouseY = e.clientY;
 
         if (!initCursor) {
-            TweenLite.to(cursor, 0.3, { opacity: 1 });
+            TweenLite.to(cursor, 0.3, { opacity: 2  });
             initCursor = true;
         }
 

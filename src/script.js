@@ -274,7 +274,7 @@ window.addEventListener('scroll', () => {
         canvas_webgl.style.marginLeft = '0';
 
         canvas_webgl.style.borderRadius = '0';
-        header.style.marginTop = "1%"
+        header.style.marginTop = "20px"
     } else {
         canvas_webgl.style.height = `${sizes.height}px`;
         canvas_webgl.style.marginTop = `${marginTop_webgl}px`;
@@ -283,8 +283,7 @@ window.addEventListener('scroll', () => {
         canvas_webgl.style.marginLeft = `${marginLeft_webgl}px`;
 
         canvas_webgl.style.borderRadius = '15px';
-        header.style.marginTop = "2%"
-
+        header.style.marginTop = "40px"
     }
 })
 
