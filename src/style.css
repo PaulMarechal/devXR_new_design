@@ -598,7 +598,7 @@ svg{
 }
 
 .description_fonctionnement_right{
-    width: 50%;
+    width: 40em;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -631,6 +631,7 @@ svg{
     color: white;
     line-height: 2.2vw;
     font-size: 1.4rem;
+    width: 25em;
 }
 
 .onglet_video_demo{
