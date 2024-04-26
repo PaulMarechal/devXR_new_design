@@ -581,12 +581,21 @@ svg{
 /* fin test arguments section */
 
 /* Fonctionnement */
-.title_fonctionnement h1 {
-    text-transform: math-auto;
-    font-size: 2.2em;
-    color: white;
-    margin-bottom: 2em;
+.title_fonctionnement  {
+width: 50em;
+display: flex;
+margin-bottom: 3em;
+margin-left: 2em;
 
+}
+
+.top_section_fonctionnement{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .description_fonctionnement_container{
@@ -598,20 +607,31 @@ svg{
 }
 
 .description_fonctionnement_right{
-    width: 40em;
+    width: 30em;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
+.left_few_words{
+    display: flex;
+    flex-direction: column;
+}
+.illustratrion_fonctionnement{
+    width: 27em;
+}
+.container_AR_few_words{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
 
 .list_style{
-    list-style: circle;
-    font-weight: 200;
-    text-transform: math-auto;
-    color: white;
-    line-height: 1.7vw;
-    font-size: 1.2rem;
-    padding-left: 1rem;
+    
+   display: flex;
+   flex-direction: column;
 }
 
 .description_fonctionnement_left{
@@ -643,6 +663,7 @@ svg{
    padding: 0.5em;
    text-align: center;
    text-decoration: none; 
+   width: 10em;
 }
 
 .onglet_video_demo:hover {
@@ -656,6 +677,7 @@ svg{
     flex-direction: row;
     gap: 6em;
     margin-top: 5em;
+    justify-content: center;
 }
 
 .type_ar_container h1 {
@@ -1175,12 +1197,16 @@ svg{
 .sub1{
     font-size: 1.7rem;
     color: white;
-    width: 15em;
     font-family: "Open Sans", sans-serif;
     line-height:1.4 ;
     font-weight: 200;
     text-transform: math-auto;
     
+}
+
+.soustitre_catas{
+    width: 15em;
+
 }
 
 .sub2 {
