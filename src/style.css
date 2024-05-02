@@ -678,6 +678,7 @@ margin-left: 2em;
     gap: 6em;
     margin-top: 5em;
     justify-content: center;
+    margin-left: 3em;
 }
 
 .type_ar_container h1 {
@@ -1215,6 +1216,8 @@ margin-left: 2em;
     font-size: 19px;
     line-height: 1.4705882353;
     font-weight: 300;
+    text-transform: math-auto;
+
   
 }
 
@@ -1383,6 +1386,15 @@ margin-left: 2em;
     align-items: center;
 }
 
+
+.exemple_realisations_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6em;
+    background-image:url(./assets/images/mockup/background_exemples.png) ;
+    background-size: cover;
+}
 .container_explication_second_text p, .container_explication p{
     font-weight: 200; 
 }
@@ -1397,6 +1409,8 @@ margin-left: 2em;
     padding: 1rem 1.5em;
     color: #fff;
     height: max-content;
+    margin-left: 3em;
+    width: 30em;
 }
 
 .style_list_ul{
@@ -1599,6 +1613,7 @@ margin-left: 2em;
     display: flex;
     flex-direction: column;
     gap: 1em;
+    
 }
 
 .right_container_mode_emploi_second{
